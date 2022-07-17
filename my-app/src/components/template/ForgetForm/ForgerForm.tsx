@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { routes } from 'src/router/config/config.routes';
 import './ForgetForm.css';
 import { RULES_FORM } from 'src/rules';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { FormDataForgotPassword } from 'src/constants/types/SignIn';
 import apiClient from 'src/helper/api';
 
@@ -33,63 +31,5 @@ export const ForgetForm = () => {
                 <Link to={routes.default} className='text-back'>Go back to sign in.</Link>
             </Form>
         </>
-=======
-
-export const ForgetForm = () => {
-  return (
-    <>
-        <Typography.Title level={2} className='title'>Forgot your password?</Typography.Title>
-        <Typography.Title level={5} className='description'>Enter your email to recieve instructions on how to reset your password.</Typography.Title>
-        <Form className='form'>
-            <Form.Item
-                name="username"
-                rules={[
-                {
-                    type: 'email',
-                    message: 'Incorrect!',
-                }, RULES_FORM.ForgetPassword
-                ]}
-            >
-                <Input placeholder="Username or email" className='input' />
-            </Form.Item>             
-            <Form.Item>
-                <Button type="primary" htmlType="submit" className='button'>
-                    Send Reset Instructions
-                </Button>
-            </Form.Item>
-            <Link to={routes.default} className='text-back'>Go back to sign in.</Link>
-        </Form>
-    </>
->>>>>>> 3f74201 (add forms)
-=======
-import { FormDataForgotPassword } from 'src/constants/types/SignIn';
-import apiClient from 'src/helper/api';
-
-export const ForgetForm = () => {
-    const onFinish = (values: FormDataForgotPassword) => {
-        apiClient().post('reset-password/', values)
-    }
-    return (
-        <>
-            <Typography.Title level={2} className='title'>Forgot your password?</Typography.Title>
-            <Typography.Title level={5} className='description'>Enter your email to recieve instructions on how to reset your password.</Typography.Title>
-            <Form className='form' onFinish={onFinish}>
-                <Form.Item
-                    name="email"
-                    rules={[ RULES_FORM.Username]}
-                >
-                    <Input placeholder="Username or email" className='input' />
-                </Form.Item>             
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" className='button'>
-                        Send Reset Instructions
-                    </Button>
-                </Form.Item>
-                <Link to={routes.default} className='text-back'>Go back to sign in.</Link>
-            </Form>
-        </>
->>>>>>> c0933a2 (add request)
-
-  )
+    )
 }
-
