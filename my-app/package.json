@@ -2,7 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "proxy": "https://dev.xmint.co/",
+=======
+>>>>>>> 3f74201 (add forms)
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -35,6 +38,10 @@
       "react-app/jest"
     ]
   },
+<<<<<<< HEAD
+=======
+  "proxy": "https://dev.xmint.co",
+>>>>>>> 3f74201 (add forms)
   "browserslist": {
     "production": [
       ">0.2%",
