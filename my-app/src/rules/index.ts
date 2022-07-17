@@ -1,0 +1,1 @@
+export { RULES_FORM } from './rules'
