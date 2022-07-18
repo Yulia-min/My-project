@@ -2,16 +2,25 @@ import { Button, Form, Input, Typography } from 'antd'
 import { RuleObject } from 'antd/lib/form';
 import React, { ReactNode } from 'react'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import { FormDataChangePassword } from 'src/constants/types/SignIn';
 import apiClient from 'src/helper/api';
 =======
 >>>>>>> 3f74201 (add forms)
+=======
+import { useNavigate } from 'react-router-dom';
+import { FormDataChangePassword } from 'src/constants/types/SignIn';
+import apiClient from 'src/helper/api';
+>>>>>>> c0933a2 (add request)
 import { RULES_FORM } from 'src/rules';
 
 export const ChangeForm = () => {
   const [form] = Form.useForm()
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c0933a2 (add request)
     const navigate = useNavigate()
 
   const onFinish = (values: FormDataChangePassword) => {
@@ -19,8 +28,11 @@ export const ChangeForm = () => {
         navigate('/')
     })
   }
+<<<<<<< HEAD
 =======
 >>>>>>> 3f74201 (add forms)
+=======
+>>>>>>> c0933a2 (add request)
 
   const matchPassword  = () => ({
     validator(_: RuleObject, value: string) {
@@ -35,10 +47,14 @@ export const ChangeForm = () => {
     <>
         <Typography.Title level={2} className='title'>Change your password</Typography.Title>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Form className='form' form={form} onFinish={onFinish} >
 =======
         <Form className='form' form={form}>
 >>>>>>> 3f74201 (add forms)
+=======
+        <Form className='form' form={form} onFinish={onFinish} >
+>>>>>>> c0933a2 (add request)
             <Form.Item name="password" rules={[RULES_FORM.Password]}>
                 <Input.Password placeholder='Password' iconRender={(visible: ReactNode) => visible ? "Hide" : "Show"} />
             </Form.Item>
