@@ -1,4 +1,13 @@
 export type FormDataSigIn = {
-    username: string
-    password: string
+  email: string
+  password: string
   }
+
+export type FormDataForgotPassword = {
+  email: string
+}
+
+export type FormDataChangePassword = {
+  password: string
+  token: string
+}

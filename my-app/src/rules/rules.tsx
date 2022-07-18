@@ -1,7 +1,7 @@
 export const RULES_FORM = {
     Username: {
         required: true,
-        message: 'Please input your username!',
+        message: 'Please input your username or email!',
     },
     Password: {
       required: true,
@@ -12,11 +12,7 @@ export const RULES_FORM = {
       message: 'Please confirm your password!',
     },
     PasswordCheck: {
-      pattern: new RegExp(/^[A-Za-z0-9]\w{8,}$/),
+      pattern: new RegExp(/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])[0-9a-zA-Z!@#$%^&*]{8,}/g),
       message: 'Use minimum of 8 characters.',
     },
-    ForgetPassword: {
-      required: true,
-      message: 'No account for this email address.',
-    }
   } as const

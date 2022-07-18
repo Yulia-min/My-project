@@ -1,0 +1,16 @@
+.main-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-logo{
+    margin: 10px;
+}
+
+.main-icons{
+    margin: 10px;
+}
+
+.wallet{
+    margin-left: 10px;
+}
