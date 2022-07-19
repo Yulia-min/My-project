@@ -17,7 +17,7 @@ export const SignInForm = () => {
         localStorage.setItem('user_id', res.data.id)
         localStorage.setItem('refresh_token', res.data.refresh)
         navigate('/main')
-    })
+    })}
   return (
     <>
         <Typography.Title level={2} className='title'>Please sign in.</Typography.Title>
@@ -52,5 +52,5 @@ export const SignInForm = () => {
             <Link className='link' to='/'>Terms of service.</Link>
          </div> 
     </>
-  )}
+  )
 }
