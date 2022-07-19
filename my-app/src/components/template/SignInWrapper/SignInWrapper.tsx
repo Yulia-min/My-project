@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import 'antd/dist/antd.css';
-import './SignInWrapper.css';
+import './SignInWrapper.scss';
 import { Header, ImageSlider } from 'src/components/atoms';
 
 interface IProps {

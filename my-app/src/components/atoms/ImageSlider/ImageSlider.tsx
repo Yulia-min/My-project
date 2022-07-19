@@ -7,7 +7,7 @@ import first from 'src/public/first.png'
 import second from 'src/public/second.png'
 import third from 'src/public/third.png'
 import { IMAGES } from 'src/constants/ImageSlider';
-import './ImageSlider.css';
+import './ImageSlider.scss';
 import { SETTING } from 'src/constants/setting';
 
 export const ImageSlider = () => {

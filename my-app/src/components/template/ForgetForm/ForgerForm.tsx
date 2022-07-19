@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Button, Form, Input, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { routes } from 'src/router/config/config.routes';
-import './ForgetForm.css';
+import './ForgetForm.scss';
 import { RULES_FORM } from 'src/rules';
 import { FormDataForgotPassword } from 'src/constants/types/SignIn';
 import apiClient from 'src/helper/api';
 
 export const ForgetForm = () => {
+    const [ errorEmailMessage, setErrorEmailMessage ] = useState('')
     const onFinish = (values: FormDataForgotPassword) => {
-        apiClient().post('reset-password/', values)
+        apiClient().post('reset-password/', values).catch((error) => {
+            setErrorEmailMessage(error.response.data)
+        } )
     }
     return (
         <>
@@ -22,7 +25,8 @@ export const ForgetForm = () => {
                     rules={[ RULES_FORM.Username]}
                 >
                     <Input placeholder="Username or email" className='input' />
-                </Form.Item>             
+                </Form.Item>      
+                {errorEmailMessage && (<p className="error"> {errorEmailMessage} </p>)}       
                 <Form.Item>
                     <Button type="primary" htmlType="submit" className='button'>
                         Send Reset Instructions

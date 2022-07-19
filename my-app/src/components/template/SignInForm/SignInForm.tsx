@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import 'antd/dist/antd.css';
 import { Button, Form, Input, Typography } from 'antd';
-import './SignInForm.css';
+import './SignInForm.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { routes } from 'src/router/config/config.routes';
 import { FormDataSigIn } from 'src/constants/types/SignIn';
@@ -9,6 +9,9 @@ import { RULES_FORM } from 'src/rules';
 import apiClient from 'src/helper/api';
 
 export const SignInForm = () => {
+
+  const [ errorPasswordMessage, setErrorPasswordMessage ] = useState('')
+  const [ errorEmailMessage, setErrorEmailMessage ] = useState('')
   const navigate = useNavigate()
   const onFinish = (values: FormDataSigIn) => {
     apiClient().post('login/', values).then((res) => { 
@@ -17,6 +20,9 @@ export const SignInForm = () => {
         localStorage.setItem('user_id', res.data.id)
         localStorage.setItem('refresh_token', res.data.refresh)
         navigate('/main')
+    }).catch((error) => {
+        setErrorPasswordMessage(error.response.data.password)
+        setErrorEmailMessage(error.response.data.username)
     })
   }
   return (
@@ -29,12 +35,14 @@ export const SignInForm = () => {
             >
                 <Input autoComplete="new-password" placeholder="Username or email" className='input' />
             </Form.Item>
+            {errorEmailMessage && (<p className="error"> {errorEmailMessage} </p>)}
             <Form.Item
                 name="password"
                 rules={[RULES_FORM.Password, RULES_FORM.PasswordCheck]}
             >
                 <Input.Password autoComplete="new-password" placeholder="Password" className='input' iconRender={(visible: ReactNode) => visible ? "Hide" : "Show"} />
-            </Form.Item>     
+            </Form.Item>   
+            {errorPasswordMessage && (<p className="error"> {errorPasswordMessage} </p>)}
             <Form.Item className='forgot-password'>
                 <Link to={routes.forget} className='link'>
                     Forgot password

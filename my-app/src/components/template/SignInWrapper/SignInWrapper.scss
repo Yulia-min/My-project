@@ -1,0 +1,48 @@
+.sign-in-wrapper{
+    display: flex;
+    width: 100%;
+}
+
+.sign-in-form{
+    width: 100%;
+}
+
+.slider.slick-slider{
+    width: 480px;
+}
+
+.form{ 
+    margin: 0 25% 0 15%;
+    width: 50%;
+}
+
+.title{
+    margin: 25% 25% 0 15%;
+}
+
+.button.ant-btn{
+    width: 100%;
+    background: #458FAC;
+    border-radius: 6px;
+    height: 48px;
+}
+
+.text{
+    display: flex;
+    margin-left: 15%;
+}
+
+.link{
+    margin-left: 2px;
+    color: #161C1E;
+    text-decoration: underline;
+}
+
+.text-item{
+    color: #7D8081;
+    margin-left: 2px;
+}
+
+.input{
+    border-radius: 6px;
+}
