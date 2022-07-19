@@ -1,0 +1,25 @@
+.tabs{
+    width: 1015px;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;   
+    color: #161C1E;
+}
+
+.ant-tabs-ink-bar {
+    background: #161C1E;
+ }
+
+ .ant-tabs-tab-btn{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #7D8081;
+ }

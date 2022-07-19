@@ -1,0 +1,82 @@
+.profile{
+    width: 297px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.profile-name{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.profile-email{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.ant-typography + h5.ant-typography {
+    margin-top: 0;
+}
+
+.profile-email.ant-typography{
+    color: #7D8081;
+}
+
+h3.ant-typography{
+    color: #161C1E;
+}
+
+.wallet-button{
+    background: #458FAC;
+    border-radius: 6px;
+    height: 40px;
+    margin-bottom: 16px;
+    margin-top: 24px;
+}
+
+.wallet-button span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.edit-button{
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D0D2D2;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+
+.edit-button span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #161C1E;
+}
+
+.profile-description{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px; 
+}
+
+.profile-description.ant-typography{
+    color: #161C1E;
+}
