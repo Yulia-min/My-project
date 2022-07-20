@@ -14,8 +14,8 @@ export const ImageSlider = () => {
   return (
     <Slider {...SETTING} className='slider'>
         {IMAGES.map(image => (
-            <div className='image-wrapper' key={image.id}> 
-                <img alt='xmint' src={image.image} className='image' /> 
+            <div className='images-wrapper' key={image.id}> 
+                <img alt='xmint' src={image.image} className='images' /> 
                 <div className='title-text'>Collect and sell iconic board sports NFTs.</div>
                 <div className='description-text'>Don't miss  the next drop.</div>
                 <img src={first} alt='first-icon' className='first-icon' />

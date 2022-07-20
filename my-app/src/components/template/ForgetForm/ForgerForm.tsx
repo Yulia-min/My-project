@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom';
 import { routes } from 'src/router/config/config.routes';
 import './ForgetForm.scss';
 import { RULES_FORM } from 'src/rules';
-import { FormDataForgotPassword } from 'src/types/signIn/SignIn';
-import apiClient from 'src/helper/api';
+import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
+import { FormDataForgotPassword } from 'src/constants/Api/SignIn/SignIn.d';
+import { requestForgetForm } from 'src/redux/users/actions';
+import { getErrorInfo } from 'src/redux/users/selectors';
 
 export const ForgetForm = () => {
-    const [ errorEmailMessage, setErrorEmailMessage ] = useState('')
+    const dispatch = useAppDispatch()
+    const error = useAppSelector(getErrorInfo)
     const onFinish = (values: FormDataForgotPassword) => {
-        apiClient().post('reset-password/', values).catch((error) => {
-            setErrorEmailMessage(error.response.data)
-        } )
+        dispatch(requestForgetForm({ email: values}))
     }
     return (
         <>
@@ -26,7 +27,7 @@ export const ForgetForm = () => {
                 >
                     <Input placeholder="Username or email" className='input' />
                 </Form.Item>      
-                {errorEmailMessage && (<p className="error"> {errorEmailMessage} </p>)}       
+                {error && (<p className="error"> {error} </p>)}       
                 <Form.Item>
                     <Button type="primary" htmlType="submit" className='button'>
                         Send Reset Instructions

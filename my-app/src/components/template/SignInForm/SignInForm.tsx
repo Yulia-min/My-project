@@ -1,30 +1,26 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react'
 import 'antd/dist/antd.min.css'
-import { Button, Form, Input, Typography } from 'antd';
+import { Button, Form, Input, Typography } from 'antd'
 import './SignInForm.scss';
-import { Link, useNavigate } from 'react-router-dom';
-import { routes } from 'src/router/config/config.routes';
-import { FormDataSigIn } from 'src/types/signIn/SignIn';
-import { RULES_FORM } from 'src/rules';
-import apiClient from 'src/helper/api';
+import { Link, useNavigate } from 'react-router-dom'
+import { routes } from 'src/router/config/config.routes'
+import { requestSignIn, requestUserInfo } from 'src/redux/users/actions'
+import { RULES_FORM } from 'src/rules'
+import { FormDataSigIn } from 'src/constants/Api/SignIn/SignIn.d'
+import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
+import { getErrorInfo } from 'src/redux/users/selectors'
 
 export const SignInForm = () => {
 
-  const [ errorPasswordMessage, setErrorPasswordMessage ] = useState('')
-  const [ errorEmailMessage, setErrorEmailMessage ] = useState('')
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
+
+  const error = useAppSelector(getErrorInfo)
+
   const onFinish = (values: FormDataSigIn) => {
-    apiClient().post('login/', values).then((res) => { 
-        localStorage.setItem('email', res.data.email)
-        localStorage.setItem('access_token', res.data.access)
-        localStorage.setItem('user_id', res.data.id)
-        localStorage.setItem('refresh_token', res.data.refresh)
-        navigate('/main')
-        apiClient().get(`users/${res.data.id}/`)
-    }).catch((error) => {
-        setErrorPasswordMessage(error.response.data.password)
-        setErrorEmailMessage(error.response.data.username)
-    })
+    dispatch(requestSignIn({ users: values }))
+    navigate('/main')
+    dispatch(requestUserInfo())
   }
 
   const iconRender = (visible: ReactNode) => visible ? "Hide" : "Show"
@@ -39,14 +35,14 @@ export const SignInForm = () => {
             >
                 <Input autoComplete="new-password" placeholder="Username or email" className='input' />
             </Form.Item>
-            {errorEmailMessage && (<p className="error"> {errorEmailMessage} </p>)}
+            {error?.username && (<p className="error">{error?.username}</p>)}
             <Form.Item
                 name="password"
                 rules={[RULES_FORM.Password, RULES_FORM.PasswordCheck]}
             >
                 <Input.Password autoComplete="new-password" placeholder="Password" className='input' iconRender={iconRender} />
             </Form.Item>   
-            {errorPasswordMessage && (<p className="error"> {errorPasswordMessage} </p>)}
+            {error?.password && (<p className="error">{error?.password}</p>)}
             <Form.Item className='forgot-password'>
                 <Link to={routes.forget} className='link'>
                     Forgot password

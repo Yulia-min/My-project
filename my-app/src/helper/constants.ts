@@ -1,1 +1,1 @@
-export const isAuthenticated = localStorage.getItem('access_token');
+export const isAuthenticated = localStorage.getItem('access');

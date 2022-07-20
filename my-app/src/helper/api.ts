@@ -1,16 +1,10 @@
-import axios from 'axios'
+export const HTTP_METHODS = {
+  GET: 'GET',
+  POST: 'POST',
+  PUT: 'PUT',
+  PATCH: 'PATCH',
+  DELETE: 'DELETE',
+} as const
 
-const access_token = localStorage.getItem('access_token')
-
-const apiClient = () => {
-  const axiosInstance = axios.create({
-    baseURL: '/api/v1/',
-    responseType: 'json',
-    headers: { 
-        Accept: 'application/json', 'Content-Type': 'application/json',
-        Authorization: `Bearer ${access_token}`,
-    }
-  })
-  return axiosInstance
-}
-export default apiClient
+export const API_HOSTS = 'api/v1/'
+export const BASE_URL = '/'

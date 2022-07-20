@@ -8,13 +8,9 @@ import './Main.css'
 import { Profile } from './Profile'
 import { Tabs } from './Tabs'
 import { Link } from 'react-router-dom'
-import apiClient from 'src/helper/api'
 
 export const Main = () => {
 
-    // useEffect(() => {
-    //     apiClient().get('users/4388c566-3105-4e15-b7bd-6b8b920b351f/').then((res) => console.log(res.data))
-    // })
   return (
     <>
       <div className='main-header'>

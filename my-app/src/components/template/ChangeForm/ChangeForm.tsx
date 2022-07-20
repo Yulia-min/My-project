@@ -2,14 +2,17 @@ import { Button, Form, Input, Typography } from 'antd'
 import { RuleObject } from 'antd/lib/form';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { FormDataChangePassword } from 'src/types/signIn/SignIn'
-import apiClient from 'src/helper/api'
+import { FormDataChangePassword } from 'src/constants/Api/SignIn/SignIn.d';
+import { useAppDispatch } from 'src/redux/hooks';
+import { requestChangeForm } from 'src/redux/users/actions';
 import { RULES_FORM } from 'src/rules'
 import './ChangeForm.scss'
 
 export const ChangeForm = () => {
   const [form] = Form.useForm()
   const navigate = useNavigate()
+
+  const dispatch = useAppDispatch()
 
   const [isPasswordShow, setIsPasswordShow] = useState(false)
 
@@ -20,9 +23,9 @@ export const ChangeForm = () => {
   }
 
   const onFinish = (values: FormDataChangePassword) => {
-    apiClient().post('reset-password-confirmation/', { ...values, token}).then((res) => { 
-        navigate('/')
-    })
+    dispatch(requestChangeForm({password: { ...values, token}}))
+    localStorage.clear()
+    navigate('/')
   }
 
   const matchPassword  = () => ({
