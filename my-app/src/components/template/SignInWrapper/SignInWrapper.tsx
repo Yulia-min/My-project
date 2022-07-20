@@ -1,11 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import './SignInWrapper.scss';
 import { Header, ImageSlider } from 'src/components/atoms';
-
-interface IProps {
-    children: ReactNode
-}
+import { IProps } from './SidnInModal';
 
 export const SignInWrapper = ({children}: IProps) => {
   return (
