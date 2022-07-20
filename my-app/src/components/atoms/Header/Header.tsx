@@ -1,6 +1,6 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import './Header.css';
+import './Header.scss';
 import logo from 'src/public/logo.png'
 
 export const Header = () => {
