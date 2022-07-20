@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import { Button, Form, Input, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { routes } from 'src/router/config/config.routes';
