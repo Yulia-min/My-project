@@ -2,7 +2,7 @@ import { Button, Form, Input, Typography } from 'antd'
 import { RuleObject } from 'antd/lib/form';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { FormDataChangePassword } from 'src/constants/types/SignIn'
+import { FormDataChangePassword } from 'src/types/signIn/SignIn'
 import apiClient from 'src/helper/api'
 import { RULES_FORM } from 'src/rules'
 import './ChangeForm.scss'
@@ -18,7 +18,7 @@ export const ChangeForm = () => {
   const toggleIsPasswordShowValue = () => {
     setIsPasswordShow(!isPasswordShow)
   }
-  
+
   const onFinish = (values: FormDataChangePassword) => {
     apiClient().post('reset-password-confirmation/', { ...values, token}).then((res) => { 
         navigate('/')

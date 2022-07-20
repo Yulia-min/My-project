@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { routes } from 'src/router/config/config.routes';
 import './ForgetForm.scss';
 import { RULES_FORM } from 'src/rules';
-import { FormDataForgotPassword } from 'src/constants/types/SignIn';
+import { FormDataForgotPassword } from 'src/types/signIn/SignIn';
 import apiClient from 'src/helper/api';
 
 export const ForgetForm = () => {

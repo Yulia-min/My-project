@@ -4,7 +4,7 @@ import { Button, Form, Input, Typography } from 'antd';
 import './SignInForm.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { routes } from 'src/router/config/config.routes';
-import { FormDataSigIn } from 'src/constants/types/SignIn';
+import { FormDataSigIn } from 'src/types/signIn/SignIn';
 import { RULES_FORM } from 'src/rules';
 import apiClient from 'src/helper/api';
 
@@ -20,11 +20,15 @@ export const SignInForm = () => {
         localStorage.setItem('user_id', res.data.id)
         localStorage.setItem('refresh_token', res.data.refresh)
         navigate('/main')
+        apiClient().get(`users/${res.data.id}/`)
     }).catch((error) => {
         setErrorPasswordMessage(error.response.data.password)
         setErrorEmailMessage(error.response.data.username)
     })
   }
+
+  const iconRender = (visible: ReactNode) => visible ? "Hide" : "Show"
+  
   return (
     <>
         <Typography.Title level={2} className='title'>Please sign in.</Typography.Title>
@@ -40,7 +44,7 @@ export const SignInForm = () => {
                 name="password"
                 rules={[RULES_FORM.Password, RULES_FORM.PasswordCheck]}
             >
-                <Input.Password autoComplete="new-password" placeholder="Password" className='input' iconRender={(visible: ReactNode) => visible ? "Hide" : "Show"} />
+                <Input.Password autoComplete="new-password" placeholder="Password" className='input' iconRender={iconRender} />
             </Form.Item>   
             {errorPasswordMessage && (<p className="error"> {errorPasswordMessage} </p>)}
             <Form.Item className='forgot-password'>
