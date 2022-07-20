@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import { Button, Form, Input, Typography } from 'antd';
 import './SignInForm.scss';
 import { Link, useNavigate } from 'react-router-dom';

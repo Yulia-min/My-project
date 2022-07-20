@@ -1,5 +1,5 @@
 import React from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import './SignInWrapper.scss';
 import { Header, ImageSlider } from 'src/components/atoms';
 import { IProps } from './SidnInModal';
