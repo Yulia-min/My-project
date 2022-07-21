@@ -15,11 +15,21 @@
     background: #161C1E;
  }
 
- .ant-tabs-tab-btn{
+.ant-tabs-tab-btn{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     color: #7D8081;
- }
+}
+
+.card-display{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#scrollableDiv {
+    height: 750px;
+    overflow: auto;
+  }
