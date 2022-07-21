@@ -1,4 +1,4 @@
-import { IUsersState } from "../types/usersTypes";
+import { IUserState } from "../types/userTypes";
 
-export const getUserInfo = (state: { users: IUsersState }) => state.users
-export const getErrorInfo = (state: {users: IUsersState}) => state.users.error
+export const getUserInfo = (state: { user: IUserState }) => state.user
+export const getErrorInfo = (state: {user: IUserState}) => state.user.error

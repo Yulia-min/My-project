@@ -4,7 +4,7 @@ import { Button, Form, Input, Typography } from 'antd'
 import './SignInForm.scss';
 import { Link, useNavigate } from 'react-router-dom'
 import { routes } from 'src/router/config/config.routes'
-import { requestSignIn, requestUserInfo } from 'src/redux/users/actions'
+import { requestSignIn } from 'src/redux/users/actions'
 import { RULES_FORM } from 'src/rules'
 import { FormDataSigIn } from 'src/constants/Api/SignIn/SignIn.d'
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
@@ -18,9 +18,8 @@ export const SignInForm = () => {
   const error = useAppSelector(getErrorInfo)
 
   const onFinish = (values: FormDataSigIn) => {
-    dispatch(requestSignIn({ users: values }))
+    dispatch(requestSignIn({ user: values }))
     navigate('/main')
-    dispatch(requestUserInfo())
   }
 
   const iconRender = (visible: ReactNode) => visible ? "Hide" : "Show"

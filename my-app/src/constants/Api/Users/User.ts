@@ -1,6 +1,6 @@
 import { HTTP_METHODS } from 'src/helper/api'
 import Fetcher from 'src/services/fetcher'
-import { UserData, UserInfoResponse } from './Users.d'
+import { UserData, UserInfoResponse } from './User.d'
 const fetcher = new Fetcher()
 
 export const requestUserInfo = () =>{

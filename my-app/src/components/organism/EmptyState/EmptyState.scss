@@ -1,0 +1,23 @@
+.empty-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    margin: 10% 25% 0 25%;
+}
+
+.empty-descripton{
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+    width: 260px;
+}
+
+.empty-button{
+    width: 192px;
+    height: 40px;
+    margin: 0 15% 0 15%;
+    background: #FFFFFF;
+    border: 1px solid #D0D2D2;
+    border-radius: 6px;
+    color: #161C1E;
+}

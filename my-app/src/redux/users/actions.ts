@@ -1,23 +1,22 @@
 import { requestSignIn as requestSignInAPI } from 'src/constants/Api/SignIn/SignIn'
 import { requestForgetForm as requestForgetFormAPI } from 'src/constants/Api/SignIn/SignIn'
 import { requestChangeForm as requestChangeFormAPI} from 'src/constants/Api/SignIn/SignIn'
-import { requestUserInfo as requestUserInfoAPI } from 'src/constants/Api/Users/Users'
+import { requestUserInfo as requestUserInfoAPI } from 'src/constants/Api/Users/User'
 import { AppThunk } from '../strore'
 import {
   error,
   finish,
   loading,
   loadingSuccess,
-} from '../reducers/usersSlice'
+} from '../reducers/userSlice'
 import { RequestChangeFormActionProps, RequestForgetFormActionProps, RequestSignInActionProps } from '../types/requestsTypes'
-import { notification } from 'antd'
 
 export const requestSignIn =
-  ({ users }: RequestSignInActionProps): AppThunk =>
+  ({ user }: RequestSignInActionProps): AppThunk =>
   async (dispatch) => {
     try {
       dispatch(loading())
-      const { data } = await requestSignInAPI(users)
+      const { data } = await requestSignInAPI(user)
       if (data) {
         localStorage.setItem('access', data.access)
         localStorage.setItem('email', data.email)

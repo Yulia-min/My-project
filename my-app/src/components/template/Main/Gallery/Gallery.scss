@@ -1,0 +1,32 @@
+.gallery-wrapper{
+    width: 325px;
+    height: 362px;
+}
+
+.gallery-name{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #161C1E;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.gallery-info{
+    display: flex;
+    justify-content: space-between;
+    &_price{
+        font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #161C1E;
+    }
+    &_icon{
+        display: flex;
+        align-items: center;
+    }
+}

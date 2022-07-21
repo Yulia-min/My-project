@@ -1,7 +1,7 @@
 import { FormDataChangePassword, FormDataForgotPassword, FormDataSigIn } from "src/constants/Api/SignIn/SignIn.d"
 
 export type RequestSignInActionProps = {
-  users: FormDataSigIn
+  user: FormDataSigIn
 }
 
 export type RequestForgetFormActionProps = {
