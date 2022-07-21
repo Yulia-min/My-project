@@ -9,8 +9,19 @@ export type UserData = {
 }
 
 export type DropData = {
-    name: string
-    result: []
+    count: number
+    next: string
+    results: [
+        {
+            id: string
+            drop: {
+                id: string
+                pack_artwork: string
+                price: number
+                title: string
+            }
+        }
+    ]
 }
 
 export type EditionData = {

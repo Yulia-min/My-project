@@ -1,6 +1,6 @@
 export interface IDrop {
     count: number | undefined
-    next: string
+    next: string 
     results: [
         {
             id: string
@@ -13,9 +13,20 @@ export interface IDrop {
         }
     ]
 }
+
+export type IDropResult = {
+    id: string
+        drop: {
+            id: string
+            pack_artwork: string
+            price: number
+            title: string
+        }
+}
   
 export interface IDropState {
     drop: IDrop | null
+    results : IDropResult[]
     isDropsLoading: boolean
     isLoaded: boolean
     error: any | null

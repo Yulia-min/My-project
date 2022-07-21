@@ -3,6 +3,7 @@ import { IDrop, IDropState } from '../types/dropsTypes'
 
 const initialState: IDropState = {
   drop: null,
+  results: [],
   isDropsLoading: false,
   isLoaded: false,
   error: null,
@@ -18,8 +19,8 @@ export const dropSlice = createSlice({
     },
     loadingSuccess(state: IDropState, action: PayloadAction<IDrop>) {
       state.isDropsLoading = false
-      state.error = ''
-      state.drop = {...state.drop, ...action.payload}
+      state.drop = action.payload
+      state.results = [...state.results, ...action.payload.results]
     },
     finish(state: IDropState) {
       state.isDropsLoading = false

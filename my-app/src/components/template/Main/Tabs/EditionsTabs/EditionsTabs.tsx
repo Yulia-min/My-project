@@ -16,8 +16,8 @@ export const EditionsTabs = () => {
   
   const { edition, isLoading } = useAppSelector(getEditionsInfo)
 
-  console.log(edition)
-  console.log(isLoading)
+//   console.log(edition)
+//   console.log(isLoading)
 
   const loadMoreData = () => {
     if (isLoading) {
