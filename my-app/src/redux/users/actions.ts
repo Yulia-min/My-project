@@ -10,7 +10,6 @@ import {
   loadingSuccess,
 } from '../reducers/userSlice'
 import { RequestChangeFormActionProps, RequestForgetFormActionProps, RequestSignInActionProps } from '../types/requestsTypes'
-import { notification } from 'antd'
 
 export const requestSignIn =
   ({ user }: RequestSignInActionProps): AppThunk =>
@@ -23,6 +22,7 @@ export const requestSignIn =
         localStorage.setItem('email', data.email)
         localStorage.setItem('id', data.id)
         localStorage.setItem('refresh', data.refresh)
+        dispatch(requestUserInfo())
       }
     } catch (err) {
       dispatch(error({ error: err }))
