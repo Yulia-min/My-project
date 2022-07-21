@@ -2,39 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Tabs as MainTabs } from 'antd'
 import './Tabs.css'
 import { Card } from '../Card'
-// import apiClient from 'src/helper/api'
-
-// type ProfileData = {
-//   email: string
-//   id: string
-//   username: string
-// }
 
 export const Tabs = () => {
-
-  const [drops, setDrops] = useState({})
-  const [editions, setEditions] = useState({})
-  const [saved, setSaved] = useState ({})
-
-  const user_id = localStorage.getItem("user_id")
-
-  // useEffect(() => {
-  //   apiClient().get(`users/${user_id}/editions/`).then((res) => { 
-  //     console.log(res.data)
-  //     setEditions(res.data)
-  //     // setUserInfo(res.data)
-  // })
-  //   apiClient().get(`users/${user_id}/drops/`).then((res) => { 
-  //     console.log(res.data)
-  //     setDrops(res.data)
-  //     // setUserInfo(res.data)
-  //   })
-  //   apiClient().get(`users/${user_id}/saved/`).then((res) => { 
-  //     console.log(res.data)
-  //     setSaved(res.data)
-  //     // setUserInfo(res.data)
-  //   })
-  // }, [])
 
   const { TabPane } = MainTabs
   return (

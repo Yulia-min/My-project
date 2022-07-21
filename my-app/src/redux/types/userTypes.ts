@@ -4,8 +4,8 @@ export interface IUser {
     username: string
 }
   
-export interface IUsersState {
-    users: IUser | null
+export interface IUserState {
+    user: IUser | null
     isLoading: boolean
     isLoaded: boolean
     error: any | null

@@ -1,4 +1,4 @@
-import { IUser } from '../../../redux/types/usersTypes'
+import { IUser } from '../../../redux/types/userTypes'
 
 export type UserData = {
     email: string
