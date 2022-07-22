@@ -1,5 +1,6 @@
 import { IDrop } from 'src/redux/types/dropsTypes'
 import { IEdition } from 'src/redux/types/editionsTypes'
+import { ISavedCards } from 'src/redux/types/savedCardTypes'
 import { IUser } from '../../../redux/types/usersTypes'
 
 export type UserData = {
@@ -29,9 +30,16 @@ export type EditionData = {
     result: []
 }
 
+export type SavedCardsData = {
+    name: string
+    result: []
+}
+
 
 export type UserInfoResponse = IUser
 
 export type DropsInfoResponse = IDrop
 
 export type EditionsInfoResponse = IEdition
+
+export type SavedCardsInfoResponse = ISavedCards

@@ -1,5 +1,5 @@
 export type GalleryType = {
-    image: string
+    original_pic: string
     title: string
     price: number
     likes: number

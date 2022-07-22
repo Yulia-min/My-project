@@ -22,6 +22,7 @@ export const requestSignIn =
         localStorage.setItem('email', data.email)
         localStorage.setItem('id', data.id)
         localStorage.setItem('refresh', data.refresh)
+        dispatch(requestUserInfo())
       }
     } catch (err) {
       dispatch(error({ error: err }))

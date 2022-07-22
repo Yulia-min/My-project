@@ -3,8 +3,10 @@ import { IEdition, IEditionState } from '../types/editionsTypes'
 
 const initialState: IEditionState = {
   edition: null,
+  saleEdition: null,
+  results: [],
+  saleResults: [],
   isLoading: false,
-  isLoaded: false,
   error: null,
 }
 
@@ -18,8 +20,13 @@ export const editionSlice = createSlice({
     },
     loadingSuccess(state: IEditionState, action: PayloadAction<IEdition>) {
       state.isLoading = false
-      state.error = ''
-      state.edition = {...action.payload}
+      state.edition = action.payload
+      state.results = [...state.results, ...action.payload.results]
+    },
+    loadingSaleSuccess(state: IEditionState, action: PayloadAction<IEdition>) {
+      state.isLoading = false
+      state.saleEdition = action.payload
+      state.saleResults = [...state.saleResults, ...action.payload.results]
     },
     finish(state: IEditionState) {
       state.isLoading = false
@@ -35,4 +42,4 @@ export const editionSlice = createSlice({
 })
 
 export default editionSlice.reducer
-export const { loading, loadingSuccess, finish, error } = editionSlice.actions
+export const { loading, loadingSuccess, finish, error, loadingSaleSuccess } = editionSlice.actions

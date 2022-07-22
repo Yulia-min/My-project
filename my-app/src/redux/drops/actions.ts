@@ -7,11 +7,12 @@ import {
   loadingSuccess,
 } from '../reducers/dropsSlice'
 
-export const requestUserDropsInfo = (count: string): AppThunk => async (dispatch) => {
+export const requestUserDropsInfo = (offset: number, setOffset: Function): AppThunk => async (dispatch) => {
     try {
       dispatch(loading())
-      const response = await requestUserDropsInfoAPI(count)
+      const response = await requestUserDropsInfoAPI(offset)
       dispatch(loadingSuccess(response.data))
+      setOffset(offset + 10)
     } catch (err) {
       dispatch(error({ error: err }))
     } finally {

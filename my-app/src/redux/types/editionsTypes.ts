@@ -17,10 +17,26 @@ export interface IEdition {
         }
     ]
 }
+
+export type IEditionResult = {
+    id: string
+    number: number
+    moment: {
+        id: string
+        likes: number
+        title: string
+        original_pic: {
+            id: string
+            attachment: string
+        }
+    }
+}
   
 export interface IEditionState {
     edition: IEdition | null
+    saleEdition: IEdition | null
+    results: IEditionResult[]
+    saleResults: IEditionResult[]
     isLoading: boolean
-    isLoaded: boolean
     error: any | null
 }
