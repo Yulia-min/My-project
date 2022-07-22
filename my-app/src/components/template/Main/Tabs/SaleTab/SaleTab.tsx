@@ -41,7 +41,7 @@ export const SaleTab = () => {
                           <Gallery  price={edition.number} original_pic={edition.moment.original_pic.attachment} title={edition.moment.title} likes={edition.moment.likes} />
                         </div>)
                     ) : (
-                      <EmptyState children description='Once you list your moments for sale, they will appear here.' />
+                      <EmptyState  description='Once you list your moments for sale, they will appear here.' />
                     )
                 )
             }

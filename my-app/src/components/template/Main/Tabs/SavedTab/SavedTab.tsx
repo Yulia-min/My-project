@@ -39,7 +39,7 @@ export const SavedTab = () => {
                     <Gallery price={savedCard.max_price} original_pic={savedCard.original_pic.attachment} title={savedCard.title} likes={savedCard.likes} />
                   </div>)
               ) : (
-              <EmptyState children description='Once you list your moments for sale, they will appear here.' />
+              <EmptyState description='Once you save your moments, they will appear here.' />
               )
           )
         }
