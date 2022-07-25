@@ -1,0 +1,43 @@
+.edit-profile{
+    margin-left: 135px;
+    &_title{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 40px;
+        color: #161C1E;
+        margin-bottom: 24px;
+    }
+}
+
+.name-info{
+    display: flex;
+}
+
+.name-input{
+    border: 1px solid #D0D2D2;
+    border-radius: 6px;
+    background: #FFFFFF;
+    width: 323px;
+    height: 48px;
+    margin-right: 24px;
+    box-sizing: border-box;
+}
+
+.email-input{
+    box-sizing: border-box;
+    width: 670px;
+    height: 48px;
+    background: #F2F2F3;
+    border: 1px solid #D0D2D2;
+    border-radius: 6px;
+}
+
+.about-input{
+    box-sizing: border-box;
+    width: 670px;
+    background: #FFFFFF;
+    border: 1px solid #D0D2D2;
+    border-radius: 6px;
+}

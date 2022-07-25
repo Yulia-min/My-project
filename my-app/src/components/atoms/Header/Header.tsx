@@ -7,6 +7,7 @@ export const Header = () => {
   return (
     <div className='header'>
         <img alt='logo' className='logo' src={logo} />
+        <div className='header-line' />
     </div>
   )
 }

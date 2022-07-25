@@ -3,6 +3,7 @@ export const routes = {
     forget: '/forget',
     change:'/change',
     main: '/main',
-    profile:'/profile'
+    profile:'/profile',
+    edit_user: 'edit-user',
   }
   
