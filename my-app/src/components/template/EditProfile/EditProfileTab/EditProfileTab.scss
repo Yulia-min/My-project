@@ -41,3 +41,24 @@
     border: 1px solid #D0D2D2;
     border-radius: 6px;
 }
+
+.file-input{
+    background: #FFFFFF;
+    border: none;
+    width: 30%;
+}
+
+input#file-upload-button{
+    background-color: aqua !important;
+}
+
+.upload-info{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.upload-image{
+    width: 80px;
+    border-radius: 50%;
+}
+

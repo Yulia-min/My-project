@@ -4,6 +4,9 @@ export type UserData = {
     email: string
     id: string
     username: string
+    about: string
+    name: string
+    logo: any
 }
 
 export type UserInfoResponse = IUser

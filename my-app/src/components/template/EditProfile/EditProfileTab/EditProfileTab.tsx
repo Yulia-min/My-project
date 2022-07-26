@@ -1,16 +1,21 @@
-import { Button, Form, Image, Input, Modal, Upload } from 'antd'
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import {Button, Form, Image, Input, Modal} from 'antd'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
-import { requestUserInfo } from 'src/redux/users/actions'
+import { requestEditUserInfo, requestUserInfo } from 'src/redux/users/actions'
 import { getUserInfo } from 'src/redux/users/selectors'
 import './EditProfileTab.scss'
 import ReactCrop from 'react-image-crop'
+import photo from 'src/public/photo.png'
 import 'react-image-crop/lib/ReactCrop.scss'
+import { useNavigate } from 'react-router-dom'
+import { UserData } from 'src/constants/Api/User/User.d'
 
 export const EditProfileTab = () => {
   const [form] = Form.useForm()
 
   const dispatch = useAppDispatch()
+
+  const navigate = useNavigate()
 
   const { user } = useAppSelector(getUserInfo)
 
@@ -20,25 +25,23 @@ export const EditProfileTab = () => {
 
   useEffect(() => {
     form.setFieldsValue(user)
+    setCropImage(user?.logo ? user?.logo : photo)
   }, [user])
 
-
-  const [src, setSelectedImage] = useState<any>()
+  const [visible, setVisible] = useState(false)
+  const [src, setSelectedImage] = useState<string>()
   const [image, setImage] = useState<any>()
-  const [result, setResult] = useState<any>()
-  const [crop, setCrop] = useState<any>({ aspect: 1 / 1 });
+  const [cropImage, setCropImage] = useState<string>()
+  const [blob, setBlob] = useState<any>()
+  const [crop, setCrop] = useState<any>({ unit: '%', x: 25, y: 25, width: 50, height: 50, aspect: 1 / 1 })
 
-  const handleFileChange = (event: any) => {
-    setSelectedImage(URL.createObjectURL(event.target.files[0]))
-  }
-
-  function getCroppedImg() {
-    const canvas = document.createElement('canvas');
-    const scaleX = image.naturalWidth / image.width;
-    const scaleY = image.naturalHeight / image.height;
+  const handleOk = async () => {
+    const canvas = document.createElement('canvas')
+    const scaleX = image.naturalWidth / image.width
+    const scaleY = image.naturalHeight / image.height
     canvas.width = crop.width;
     canvas.height = crop.height;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d')
   
     ctx?.drawImage(
       image,
@@ -52,31 +55,59 @@ export const EditProfileTab = () => {
       crop.height,
     )
 
-    const base64Image = canvas.toDataURL('image/jpeg')
-    setResult(base64Image)
+    setVisible(false)
 
-    }
+    return new Promise((resolve, reject) => {
+        canvas.toBlob(
+            (blob: any) => {
+                if (!blob) {
+                    reject(new Error('Canvas is empty'));
+                    return;
+                }
+
+                blob.name = __filename;
+                const croppedImageUrl = window.URL.createObjectURL(blob);
+                console.log(croppedImageUrl)
+                setBlob(blob)
+                setCropImage(croppedImageUrl)
+                resolve(croppedImageUrl);
+            }, 'image/jpeg'
+        );
+    });
+
+  }
+
+
+  const handleCancel = () => {
+    setVisible(false)
+  }
+
+  const handleFileChange = (event: any) => {
+    setVisible(true)
+    setSelectedImage(URL.createObjectURL(event.target.files[0]))
+  }
+
+   const onFinish = (values: UserData) => { 
+    const formData = new FormData()
+    formData.append('logo', blob, blob.name)
+    dispatch(requestEditUserInfo({user: {...values, logo : formData }}))
+   }
+
+   const handleEditCancel = () => {
+    navigate('/main')
+   }
+
 
   return (
     <div className='edit-profile'>
         <div className='edit-profile_title'>Edit profile</div>
-        <Form form={form}>
-            <Form.Item name='logo'>
-                <Input accept='image/*' type="file"  onChange={handleFileChange} />
-            </Form.Item>
-            <div>
+        <Form form={form} onFinish={onFinish}>
+            <div className='upload-info'>
                 {
-                    src && (
-                        <Modal>
-                            <ReactCrop src={src} onImageLoaded={() => setImage} crop={crop} onChange={() => setCrop}  />
-                            <Button onClick={getCroppedImg}>Crop</Button>
-                        </Modal>
-                    )
+                    cropImage && <img className='upload-image' alt='upload' src={cropImage} />           
                 }
-                {
-                    result && <Image src={result} />
-                }
-            </div>
+                <Input type="file" className='file-input' onChange={handleFileChange} />   
+            </div>      
             <div className='name-info'>
                 <Form.Item name="username">
                     <Input className='name-input' placeholder="Username" />
@@ -92,12 +123,19 @@ export const EditProfileTab = () => {
                 <Input.TextArea rows={5} className='about-input' placeholder="About your profile" />
             </Form.Item>
             <Form.Item>
-                <Button>Cancel</Button>
+                <Button onClick={handleEditCancel}>Cancel</Button>
             </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit">Save</Button>
             </Form.Item>
         </Form>
+        {
+            src && (
+                <Modal visible={visible} onOk={handleOk} onCancel={handleCancel}>
+                    <ReactCrop circularCrop src={src} onImageLoaded={setImage} crop={crop} onChange={setCrop}  />
+                </Modal>
+            )
+        }
     </div>
   )
 }

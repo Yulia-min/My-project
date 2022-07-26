@@ -3,6 +3,8 @@ export interface IUser {
     id: string
     logo: string
     username: string
+    about: string
+    name: string
 }
   
 export interface IUserState {
