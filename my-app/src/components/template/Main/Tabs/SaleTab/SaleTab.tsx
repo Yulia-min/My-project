@@ -16,8 +16,6 @@ export const SaleTab = () => {
   const { saleEdition, isLoading } = useAppSelector(getSaleInfo)
   const saleResults = useAppSelector(getSalesResults)
 
-  console.log(saleResults)
-
   const loadMoreData = () => {
     if (isLoading) {
       return
