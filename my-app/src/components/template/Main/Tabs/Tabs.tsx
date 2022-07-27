@@ -1,24 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import { Tabs as MainTabs } from 'antd'
 import './Tabs.scss'
-import { Card } from '../Card'
+import { useAppSelector } from 'src/redux/hooks'
+import { getDropsInfo } from 'src/redux/drops/selectors'
+import { getEditionsInfo, getSaleInfo } from 'src/redux/editions/selector'
+import { DropsTabs } from './DropsTab'
+import { EditionsTabs } from './EditionsTab'
+import { SavedTab } from './SavedTab'
+import { SaleTab } from './SaleTab'
+import { getSaveСardsInfo } from 'src/redux/savedCards/selectors'
 
 export const Tabs = () => {
+  const { drop } = useAppSelector(getDropsInfo)
+  const { edition } = useAppSelector(getEditionsInfo)
+  const { savedCards } = useAppSelector(getSaveСardsInfo)
+  const { saleEdition } = useAppSelector(getSaleInfo)
 
   const { TabPane } = MainTabs
+
   return (
     <MainTabs defaultActiveKey="1" className='tabs'>
-        <TabPane className='tab-pane' tab="My Gallery 0" key="1">
-          Content of Tab Pane 2
+        <TabPane className='tab-pane' tab={`Gallery ${edition?.count ? edition?.count : 0}`} key="1">
+          <EditionsTabs />
         </TabPane>
-        <TabPane tab="Drops 9" key="2">
-          <Card />
+        <TabPane tab={`Drops ${drop?.count ? drop?.count : 0}`} key="2">
+          <DropsTabs/>
         </TabPane>
-        <TabPane tab="For Sale" key="3">
-        Content of Tab Pane 3
+        <TabPane  tab={`For sale ${saleEdition?.count ? saleEdition?.count : 0}`} key="3">
+          <SaleTab />
         </TabPane>
-        <TabPane tab="Saved" key="4">
-        Content of Tab Pane 4
+        <TabPane  tab={`Saved ${savedCards?.count ? savedCards?.count : 0}`} key="4">
+          <SavedTab />
         </TabPane>
     </MainTabs>
   )

@@ -22,4 +22,13 @@
     font-size: 14px;
     line-height: 18px;
     color: #7D8081;
- }
+}
+
+.card-display{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#scrollableDiv {
+    height: 750px;
+  }

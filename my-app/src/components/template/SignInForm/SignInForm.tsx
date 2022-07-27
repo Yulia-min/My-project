@@ -38,7 +38,7 @@ export const SignInForm = () => {
             {error?.username && (<p className="error">{error?.username}</p>)}
             <Form.Item
                 name="password"
-                rules={[RULES_FORM.Password, RULES_FORM.PasswordCheck]}
+                rules={[RULES_FORM.Password,/*  RULES_FORM.PasswordCheck */]}
             >
                 <Input.Password autoComplete="new-password" placeholder="Password" className='input' iconRender={iconRender} />
             </Form.Item>   

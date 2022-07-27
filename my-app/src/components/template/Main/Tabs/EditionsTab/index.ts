@@ -1,0 +1,1 @@
+export { EditionsTabs } from './EditionsTabs'

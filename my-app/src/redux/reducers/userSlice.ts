@@ -18,7 +18,6 @@ export const userSlice = createSlice({
     },
     loadingSuccess(state: IUserState, action: PayloadAction<IUser>) {
       state.isLoading = false
-      state.error = ''
       state.user = action.payload
     },
     finish(state: IUserState) {

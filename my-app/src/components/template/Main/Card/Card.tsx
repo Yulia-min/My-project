@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react'
 import { Button } from 'antd'
-import xmint from 'src/public/xmint.png'
 import './Card.css'
+import { Image } from 'src/components/atoms/Image'
+import { CardType } from './CardType'
 
-export const Card = () => {
+export const Card = ({ items }: CardType) => {
   return (
     <div className='card-wrapper'>
-        <div className='image-wrapper'>
-          <img className='image' src={xmint} alt='xmint'/>
-        </div>
+        <Image src={items.pack_artwork} />
         <div className='card-info'>
-            <div className='card-info_name'>Xmint 1</div>
-            <div className='card-info_price'>$ 1,299</div>
+            <div className='card-info_name'>{items.title}</div>
+            <div className='card-info_price'>$ {items.price}</div>
         </div>
         <Button className='card-open'>
           Open drop

@@ -13,6 +13,7 @@ export const Profile = () => {
   const dispatch = useAppDispatch()
 
   const { user } = useAppSelector(getUserInfo)
+  const email = user?.email.substring(0,1)
 
   useEffect(() => {
     dispatch(requestUserInfo())
@@ -26,6 +27,9 @@ export const Profile = () => {
     <div className='profile'>
         <div>
             <img alt='profile' src={user?.logo ? user?.logo : noFoto} className={cn('default-image', 'profile-image')} />
+          {
+            user?.logo ? <img alt='profile' src={user?.logo} className={cn('default-image', 'profile-image')} /> : <div className='email-logo'>{email}</div>
+          }
         </div>
         <Typography.Title level={3} className='profile-name'>{user?.username}</Typography.Title>
         <Typography.Title level={5} className='profile-email'>{user?.email}</Typography.Title>
