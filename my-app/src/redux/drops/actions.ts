@@ -1,4 +1,4 @@
-import { requestUserDropsInfo as requestUserDropsInfoAPI } from 'src/constants/Api/Users/User'
+import { requestUserDropsInfo as requestUserDropsInfoAPI } from 'src/constants/Api/User/User'
 import { AppThunk } from '../strore'
 import {
   error,

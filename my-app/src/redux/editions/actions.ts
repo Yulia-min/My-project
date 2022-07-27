@@ -1,5 +1,5 @@
-import { requestUserEditionsInfo as requestUserEditionsInfoAPI } from 'src/constants/Api/Users/User'
-import { requestUserSaleInfo as requestUserSaleInfoAPI } from 'src/constants/Api/Users/User'
+import { requestUserEditionsInfo as requestUserEditionsInfoAPI } from 'src/constants/Api/User/User'
+import { requestUserSaleInfo as requestUserSaleInfoAPI } from 'src/constants/Api/User/User'
 import { AppThunk } from '../strore'
 import {
   error,

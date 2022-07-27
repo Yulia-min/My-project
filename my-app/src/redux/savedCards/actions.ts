@@ -1,4 +1,4 @@
-import { requestUserSavedInfo as requestUserSavedInfoAPI } from 'src/constants/Api/Users/User'
+import { requestUserSavedInfo as requestUserSavedInfoAPI } from 'src/constants/Api/User/User'
 import { AppThunk } from '../strore'
 import {
   error,

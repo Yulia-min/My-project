@@ -1,7 +1,8 @@
-import { IDrop } from 'src/redux/types/dropsTypes'
-import { IEdition } from 'src/redux/types/editionsTypes'
-import { ISavedCards } from 'src/redux/types/savedCardTypes'
-import { IUser } from '../../../redux/types/usersTypes'
+import { IDrop } from "src/redux/types/dropsTypes"
+import { IEdition } from "src/redux/types/editionsTypes"
+import { ISavedCards } from "src/redux/types/savedCardTypes"
+import { IUser } from "src/redux/types/userTypes"
+
 
 export type UserData = {
     email: string

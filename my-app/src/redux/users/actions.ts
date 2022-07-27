@@ -1,7 +1,7 @@
 import { requestSignIn as requestSignInAPI } from 'src/constants/Api/SignIn/SignIn'
 import { requestForgetForm as requestForgetFormAPI } from 'src/constants/Api/SignIn/SignIn'
 import { requestChangeForm as requestChangeFormAPI} from 'src/constants/Api/SignIn/SignIn'
-import { requestUserInfo as requestUserInfoAPI } from 'src/constants/Api/Users/User'
+import { requestUserInfo as requestUserInfoAPI } from 'src/constants/Api/User/User'
 import { AppThunk } from '../strore'
 import {
   error,

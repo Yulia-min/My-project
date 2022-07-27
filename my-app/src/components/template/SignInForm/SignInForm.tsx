@@ -19,6 +19,7 @@ export const SignInForm = () => {
 
   const onFinish = (values: FormDataSigIn) => {
     dispatch(requestSignIn({ user: values }))
+    dispatch(requestUserInfo())
     navigate('/main')
   }
 
