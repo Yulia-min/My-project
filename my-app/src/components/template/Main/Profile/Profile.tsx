@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Typography } from 'antd'
 import cn from 'classnames'
 import './Profile.scss'
+import noFoto from 'src/public/noFoto.png'
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
 import { requestUserInfo } from 'src/redux/users/actions'
 import { getUserInfo } from 'src/redux/users/selectors'
@@ -24,7 +25,7 @@ export const Profile = () => {
   return (
     <div className='profile'>
         <div>
-            <img alt='profile' src={user?.logo} className={cn('default-image', 'profile-image')} />
+            <img alt='profile' src={user?.logo ? user?.logo : noFoto} className={cn('default-image', 'profile-image')} />
         </div>
         <Typography.Title level={3} className='profile-name'>{user?.username}</Typography.Title>
         <Typography.Title level={5} className='profile-email'>{user?.email}</Typography.Title>

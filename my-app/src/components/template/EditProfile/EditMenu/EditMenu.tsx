@@ -1,8 +1,11 @@
 import { Tabs } from 'antd'
-import React, { useEffect, useState } from 'react'
-import { AndroidOutlined, AppleOutlined } from '@ant-design/icons'
+import React from 'react'
 import './EditMenu.scss'
 import { EditProfileTab } from '../EditProfileTab'
+import { ReactComponent as Password } from 'src/public/Password.svg'
+import { ReactComponent as Edit } from 'src/public/Edit.svg'
+import { ReactComponent as Security } from 'src/public/Security.svg'
+import { ReactComponent as Exit } from 'src/public/Exit.svg'
 
 export const EditMenu = () => {
 
@@ -12,8 +15,8 @@ const { TabPane } = Tabs
     <div className='tabs-wrapper'>
         <Tabs tabPosition='left' className='edit-tabs'>
             <TabPane tab={
-                <span>
-                    <AndroidOutlined />
+                <span className='tab-pane_item'>
+                    <Edit />
                     Edit profile
                 </span>
             } 
@@ -22,8 +25,8 @@ const { TabPane } = Tabs
                 <EditProfileTab />
             </TabPane>
             <TabPane tab={
-                <span>
-                    <AndroidOutlined />
+                <span className='tab-pane_item'>
+                    <Password />
                     Change password
                 </span>
             } 
@@ -31,8 +34,8 @@ const { TabPane } = Tabs
             Content of Tab 2
             </TabPane>
             <TabPane tab={
-                <span>
-                    <AndroidOutlined />
+                <span className='tab-pane_item'>
+                    <Security />
                     Security
                 </span>
             } 
@@ -40,8 +43,8 @@ const { TabPane } = Tabs
             Content of Tab 3
             </TabPane>
             <TabPane tab={
-                <span>
-                    <AndroidOutlined />
+                <span className='tab-pane_item'>
+                    <Exit />
                     Sign Out
                 </span>
             } 

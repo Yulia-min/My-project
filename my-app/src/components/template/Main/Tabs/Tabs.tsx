@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Tabs as MainTabs } from 'antd'
-import './Tabs.css'
+import './Tabs.scss'
 import { Card } from '../Card'
 
 export const Tabs = () => {

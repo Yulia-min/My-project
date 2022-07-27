@@ -2,6 +2,50 @@
     margin-left: 40px;
 }
 
-.ant-tabs-tab .ant-tabs-tab-active{
-    background-color: aqua !important;
+.tab-pane_item{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #161C1E;
+    padding: 10px 16px;
+
+    svg{
+        margin-right: 10px;
+        margin-bottom: -3px;
+        width: 20px;
+    }
+}
+
+.edit-tabs .ant-tabs-ink-bar{
+    display: none;
+}
+
+.edit-tabs .ant-tabs-tab-btn{
+    padding: 10px 16px;
+}
+
+.edit-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    background: #F2F2F3;
+    padding: 10px 16px;
+    border-radius: 6px;
+    width: 210px;
+
+    .tab-pane_item{
+        color: #458FAC;
+    }
+
+    svg{
+        margin-right: 10px;
+        margin-bottom: -3px;
+        path{
+            fill: #458FAC;
+        }
+    }
+}
+
+.edit-tabs .ant-tabs-left>.ant-tabs-nav .ant-tabs-tab{
+    padding: 0;
+    text-align: start;
 }

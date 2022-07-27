@@ -40,6 +40,7 @@ import axios, {
   
         const headers = {
           Authorization: `Bearer ${access_token}`,
+          "Content-Type": "multipart/form-data"
         }
   
         return { ...config, headers }
@@ -52,13 +53,6 @@ import axios, {
     }
   
     handlerCatch = <TResponse>(e: AxiosError<TResponse>) => {
-      const { response } = e
-      const { status } = response as AxiosResponse<TResponse>
-  
-      if (status === 400) {
-        localStorage.clear()
-      }
-  
       throw e
     }
   
