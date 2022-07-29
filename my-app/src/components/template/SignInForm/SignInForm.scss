@@ -18,3 +18,24 @@
     color: red;
     margin-top: -15px;
 }
+
+.button.ant-btn:focus{
+    color: white;
+}
+
+.password-input-wrapper{
+    display:flex;
+}
+
+.show-button{
+    margin-left: 355px;
+    position: absolute;
+    margin-top: 0px;
+    border: none;
+    background:white;
+    color:black;
+}
+
+.ant-btn:focus{
+    color:black;
+}

@@ -5,14 +5,13 @@ import empty from 'src/public/empty.png'
 import { Button } from 'antd'
 import { EmptyStateType } from './EmptyStateType';
 
-export const EmptyState = ({description, children, onClick}: EmptyStateType) => {
+export const EmptyState = ({description, isButton, onClick}: EmptyStateType) => {
     return (
         <div className='empty-wrapper'>
             <img alt='empty' src={empty} />
             <div className='empty-descripton'>{description}</div>
-            {children && <Button className='empty-button' onClick={onClick}>Shop now</Button> }
+            {isButton && <Button className='empty-button' onClick={onClick}>Shop now</Button> }
         </div>
-
   )
 }
 

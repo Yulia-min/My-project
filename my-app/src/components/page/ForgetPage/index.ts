@@ -1,1 +1,0 @@
-export { ForgetPage } from './ForgetPage'

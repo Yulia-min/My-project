@@ -5,4 +5,5 @@ export type ScrollType = {
     isLoading: boolean
     children: ReactNode
     dataLength: number
+    hasMore: boolean
 }

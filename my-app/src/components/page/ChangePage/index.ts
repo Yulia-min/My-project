@@ -1,1 +1,0 @@
-export { ChangePage } from './ChangePage'

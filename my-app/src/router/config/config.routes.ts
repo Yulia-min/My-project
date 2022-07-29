@@ -1,9 +1,10 @@
 export const routes = {
-    default: '/',
+    default:'/',
+    login: '/login',
     forget: '/forget',
     change:'/change',
     main: '/main',
     profile:'/profile',
-    edit_user: 'edit-user',
+    edit_user: '/edit-user',
   }
   

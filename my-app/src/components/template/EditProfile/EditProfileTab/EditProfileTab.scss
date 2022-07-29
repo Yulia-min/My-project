@@ -95,26 +95,41 @@
     border-radius: 6px;
     background: #FFFFFF;
     width: 323px;
+    padding: 10px;
     height: 48px;
     margin-right: 24px;
     box-sizing: border-box;
+    color: #161C1E;
 }
 
 .email-input{
     box-sizing: border-box;
     width: 670px;
+    padding: 10px;
     height: 48px;
     background: #F2F2F3;
     border: 1px solid #D0D2D2;
     border-radius: 6px;
+    color: #B4B6B7;
 }
 
 .about-input{
     box-sizing: border-box;
+    color: #161C1E;
+    padding: 10px;
     width: 670px;
     background: #FFFFFF;
     border: 1px solid #D0D2D2;
     border-radius: 6px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    &:focus{
+        outline: none;
+    }
 }
 
 .edit-profile_button{
@@ -127,6 +142,11 @@
     background: #FFFFFF;
     width: 97px;
     height: 48px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .save{
@@ -135,5 +155,16 @@
     width: 83px;
     height: 48px;
     margin-left: 12px;
+}
+
+.save.ant-btn-primary[disabled]{
+    background: #B5D2DE;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
 }
 

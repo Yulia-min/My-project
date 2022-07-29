@@ -1,14 +1,15 @@
-import {Button, Form, Input, Modal} from 'antd'
+import {Button, Form } from 'antd'
 import React, { createRef, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
 import { requestEditUserInfo, requestUserInfo } from 'src/redux/users/actions'
 import { getUserInfo } from 'src/redux/users/selectors'
 import './EditProfileTab.scss'
-import ReactCrop from 'react-image-crop'
 import noFoto from 'src/public/noFoto.png'
 import 'react-image-crop/lib/ReactCrop.scss'
 import { useNavigate } from 'react-router-dom'
 import { UserData } from 'src/constants/Api/User/User.d'
+import { CropImage } from 'src/components/organism'
+import { Input } from 'src/components/atoms/Input/Input'
 
 export const EditProfileTab = () => {
   const [form] = Form.useForm()
@@ -29,6 +30,10 @@ export const EditProfileTab = () => {
     setCropImage(user?.logo ? user?.logo : noFoto)
   }, [user])
 
+  const [userName, setUserName] = useState<string>()
+  const [name, setName] = useState<string>()
+  const [email, setEmail] = useState(user?.email)
+  const [about, setAbout] = useState(user?.about)
   const [visible, setVisible] = useState(false)
   const [src, setSelectedImage] = useState<string>()
   const [image, setImage] = useState<any>()
@@ -41,7 +46,7 @@ export const EditProfileTab = () => {
 
   const getCroppedImage = async () => {
     const canvas = document.createElement('canvas')
-    const scaleX = image.naturalWidth / image.width
+    const scaleX = image?.naturalWidth / image.width
     const scaleY = image.naturalHeight / image.height
     canvas.width = crop.width;
     canvas.height = crop.height;
@@ -105,11 +110,11 @@ export const EditProfileTab = () => {
         dispatch(requestEditUserInfo({user: values}))
     }
 
-    navigate('/main')
+    navigate('/profile')
    }
 
    const handleEditCancel = () => {
-    navigate('/main')
+    navigate('/profile')
    }
 
    const handleRemoveImage = () => {
@@ -126,7 +131,14 @@ export const EditProfileTab = () => {
     if (document.activeElement === ref.current) {
       setIsDisabled(false)
     }
-  };
+  }
+
+  const onChange = (e: { target: { value: React.SetStateAction<string | undefined> } }) => {
+    setUserName(e.target.value)
+    setName(e.target.value)
+    setEmail(e.target.value)
+    setAbout(e.target.value)
+  }
 
   return (
     <div className='edit-profile'>
@@ -157,17 +169,17 @@ export const EditProfileTab = () => {
             </div>  
             <div className='name-info'>
                 <Form.Item name="username">
-                    <Input className='name-input' placeholder="Username" />
+                    <Input className='name-input' onChange={onChange} value={userName}  label='Username' />
                 </Form.Item>
                 <Form.Item name="name">
-                    <Input className='name-input' placeholder="Full name" />
+                    <Input className='name-input' label="Full name"  onChange={onChange} value={name} />
                 </Form.Item>
             </div>
             <Form.Item name="email">
-                <Input className='email-input' placeholder="Email" disabled />
+                <Input onChange={onChange} value={email} className='email-input' label="Email" disabled />
             </Form.Item>
             <Form.Item name="about">
-                <Input.TextArea rows={5} className='about-input' placeholder="About your profile" />
+                <textarea rows={5} onChange={onChange} value={about} className='about-input' placeholder="About your profile" />
             </Form.Item>
             <div className='edit-profile_button'>
                 <Form.Item>
@@ -178,14 +190,15 @@ export const EditProfileTab = () => {
                 </Form.Item>
             </div>
         </Form>
-        {
-            src && (
-                <Modal visible={visible} onOk={getCroppedImage} onCancel={handleCancel}>
-                    <div className='modal-info'>Upload profile photo</div>
-                    <ReactCrop circularCrop src={src} onImageLoaded={setImage} crop={crop} onChange={setCrop}  />
-                </Modal>
-            )
-        }
+        <CropImage 
+            src={src} 
+            crop={crop} 
+            setCrop={setCrop}
+            visible={visible}
+            getCroppedImage={getCroppedImage} 
+            handleCancel={handleCancel}
+            setImage={setImage} 
+        />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 export { SignIn } from './SignIn'
-export { ForgetPage } from './ForgetPage'
-export { ChangePage } from './ChangePage'
+export { ForgetPasswordPage } from './ForgetPasswordPage'
+export { ChangePasswordPage } from './ChangePasswordPage'
 export { MainPage } from './MainPage'
 export { EditProfilePage } from './EditProfilePage'
+export { ProfilePage } from './ProfilePage'

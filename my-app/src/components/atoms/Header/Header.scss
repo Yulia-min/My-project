@@ -1,24 +1,43 @@
-.logo{
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.main-logo{
     width: 127px;
-    margin-top: 20px;
+    height: 32px;
+    margin-top: 16px;
     margin-left: 40px;
 }
 
-.notif{
-    margin-right: 20px;
+.main-icons{
+    margin: 10px;
 }
 
-.person{
+.wallet{
+    margin-left: 26px;
+    margin-right: 24px;
+}
+
+.main-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 40px;
+}
+
+.default-image{
+    border-radius: 100px;
+}
+
+.main-profile{
     width: 36px;
-    border-radius: 100%;
-    margin-right: 14px;
-    margin-left: 24px;
+    margin-right: 40px;
 }
 
-.header-line{
-    height: 1px;
+.line{
     width: 100%;
-    margin-top: 14px;
-    margin-bottom: 48px;
+    height: 1px;
     background: #E8E8E9;
+    margin-bottom: 48px;
 }

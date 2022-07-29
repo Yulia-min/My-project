@@ -1,0 +1,24 @@
+.password-input-wrapper{
+    display:flex;
+    margin-bottom: 6px;
+}
+
+.input {
+    width: 423px;
+    height: 48px;
+    border-radius: 6px;
+  }
+
+.show-button{
+    margin-left: 355px;
+    position: absolute;
+    margin-top: 13px;
+    border: none;
+    background:white;
+    color:black;
+}
+
+.ant-btn:focus{
+    color:black;
+}
+
