@@ -14,9 +14,9 @@ import { getUserInfo } from 'src/redux/users/selectors';
 export const Header = () => {
   const dispatch = useAppDispatch()
 
-  // useEffect(() => {
-  //   dispatch(requestUserInfo())
-  // }, [])
+  useEffect(() => {
+    dispatch(requestUserInfo())
+  }, [])
 
   const { user } = useAppSelector(getUserInfo)
 

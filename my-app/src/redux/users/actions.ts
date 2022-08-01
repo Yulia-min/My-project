@@ -19,11 +19,11 @@ export const requestSignIn =
       dispatch(loading())
       const { data } = await requestSignInAPI(user)
       if (data) {
-        console.log(data)
         localStorage.setItem('access', data.access)
         localStorage.setItem('email', data.email)
         localStorage.setItem('id', data.id)
         localStorage.setItem('refresh', data.refresh)
+        dispatch(requestUserInfo())
       }
     } catch (err) {
       dispatch(error({ error: err }))
@@ -69,7 +69,6 @@ export const requestSignIn =
       dispatch(loading())
       const response = await requestUserInfoAPI()
       dispatch(loadingSuccess(response.data))
-      
     } catch (err) {
       dispatch(error({ error: err }))
     } finally {
