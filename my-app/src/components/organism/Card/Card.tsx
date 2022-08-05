@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Button } from 'antd'
-import './Card.css'
+import './Card.scss'
 import { Image } from 'src/components/atoms/Image'
 import { CardType } from './CardType'
 

@@ -1,7 +1,7 @@
 import { HTTP_METHODS } from 'src/helper/api'
 import { IUser } from 'src/redux/types/userTypes'
 import Fetcher from 'src/services/fetcher'
-import { DropData, DropsInfoResponse, EditionData, EditionsInfoResponse, SavedCardsData, SavedCardsInfoResponse, UserData, UserInfoResponse } from './User.d'
+import { DropBanerData, DropData, DropsInfoResponse, EditionData, EditionsInfoResponse, SavedCardsData, SavedCardsInfoResponse, UserData, UserInfoResponse } from './User.d'
 
 const fetcher = new Fetcher()
 const user_id = localStorage.getItem("id")
@@ -23,6 +23,12 @@ export const requestUserDropsInfo = (offset: number) =>
   fetcher.requestToReceive<DropData, DropsInfoResponse>({
     url: `users/${user_id}/drops/`,
     params: {limit: 10, offset},
+    method: HTTP_METHODS.GET,
+  })
+
+  export const requestBannerInfo = () => 
+  fetcher.requestToReceive<DropBanerData, object>({
+    url: '/drops/nearest_drop_banner/',
     method: HTTP_METHODS.GET,
   })
 

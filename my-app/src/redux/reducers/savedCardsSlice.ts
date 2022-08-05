@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IEdition, IEditionState } from '../types/editionsTypes'
 import { ISavedCards, ISavedCardsState } from '../types/savedCardTypes'
 
 const initialState: ISavedCardsState = {

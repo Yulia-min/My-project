@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Loader } from '../Loader'
 import { ScrollType } from './ScrollType'

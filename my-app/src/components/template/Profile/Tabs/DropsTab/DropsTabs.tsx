@@ -13,6 +13,8 @@ export const DropsTabs = () => {
   const results = useAppSelector(getDropsResults)
   const [ offset, setOffset ] = useState(0)
 
+  console.log(drop)
+
   const loadMoreData = () => {
     if (isDropsLoading) {
       return

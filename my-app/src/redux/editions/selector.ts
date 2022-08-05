@@ -1,4 +1,4 @@
-import { IEditionState } from "../types/editionsTypes";
+import { IEditionState } from "../types/editionsTypes"
 
 export const getEditionsInfo = (state: { editions: IEditionState }) => state.editions
 export const getSaleInfo = (state: { saleEdition: IEditionState }) => state.saleEdition 

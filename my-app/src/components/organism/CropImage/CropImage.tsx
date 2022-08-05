@@ -1,7 +1,6 @@
 import { Modal } from "antd";
 import React from "react";
 import ReactCrop from "react-image-crop"
-import './CropImage.scss'
 import { CropImageType } from "./CropImageType"
 
 export const CropImage = ({ src, visible, getCroppedImage, handleCancel, setImage, crop, setCrop }: CropImageType) => {

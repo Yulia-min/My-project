@@ -6,5 +6,6 @@ export const routes = {
     main: '/main',
     profile:'/profile',
     edit_user: '/edit-user',
+    market_place: '/market-place',
   }
   

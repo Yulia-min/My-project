@@ -1,0 +1,37 @@
+.filter-input{
+    &_wrapper{
+        display: flex;
+    }
+
+    &_check{
+        color: red;
+    }
+
+    &_button{
+        margin-top: 16px;
+        width: 50px;
+        height: 40px;
+        border-radius: 6px;
+        border: 1px solid #D0D2D2;
+        color: #161C1E;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &_button:disabled{
+        background: #F2F2F3;
+        border: 1px solid #D0D2D2;
+        color: #B4B6B7;
+    }
+}
+
+.filter-input{
+    width: 111px;
+    height: 40px;
+    margin-right: 12px;
+    margin-top: 10px;
+    border-radius: 6px; 
+}

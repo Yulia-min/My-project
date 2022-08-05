@@ -9,7 +9,7 @@ import { Dropdown, Menu } from 'antd'
 import { GalleryType } from './GalleryType'
 import copy from 'src/public/copy.png'
 
-export const Gallery = ({original_pic, title, price, likes}: GalleryType) => {
+export const Gallery = ({original_pic, title, price, likes, format}: GalleryType) => {
     const [copySuccess, setCopySuccess] = useState('Copy link')
     const onClick = () => {
         navigator.clipboard.writeText('Copy link')
@@ -18,6 +18,15 @@ export const Gallery = ({original_pic, title, price, likes}: GalleryType) => {
             setCopySuccess('Copy link')
         }, 2000)
     }
+
+    const onMouseOver = (e: any) => {
+        e.target.play()
+    }
+
+    const onMouseOut = (e: any) => {
+        e.target.pause()
+    }
+
     const menu = (
     <Menu
         items={[
@@ -36,6 +45,7 @@ export const Gallery = ({original_pic, title, price, likes}: GalleryType) => {
     return (
         <div className='gallery-wrapper'>
             <Image src={original_pic} />
+            <video src={original_pic} width='300px' muted onMouseOver={onMouseOver} onMouseOut={onMouseOut} /> 
             <div className='gallery-name'>{title}</div>
             <div className='gallery-info'>
                 <div className='gallery-info_price'>{price ? `$${price}` : ''}</div>
