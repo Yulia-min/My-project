@@ -5,17 +5,21 @@ interface IProps {
   open?: boolean;
   title: string | React.ReactNode;
   children: ReactNode
+  isSelect: boolean
 }
 
 export const Collapse: React.FC<IProps> = ({
   open,
   children,
-  title
+  title,
+  isSelect
 }) => {
   const [isOpen, setIsOpen] = useState(true)
   const [height, setHeight] = useState<number | undefined>(
-    open ? undefined : 0
+    open ? undefined : 40
   )
+
+  // console.log(height, 'lll')
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -44,7 +48,12 @@ export const Collapse: React.FC<IProps> = ({
       <div className='collapse-transition'>
         <div>
           <div className='collapse-header'>
-            <div className='collapse-header_text'>{title}</div>
+            <div className="collapse-header_wrapper">
+              <div className='collapse-header_text'>{title}</div>
+              {
+                isSelect && <div className='select-mark' />
+              }
+            </div>
             <button
               type="button"
               className='collapse-icon-button'

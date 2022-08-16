@@ -12,6 +12,7 @@ export const EditionsTabs = () => {
   const dispatch = useAppDispatch()
 
   const [offset, setOffset] = useState(0)
+  const user_id = localStorage.getItem('id')
   
   const { edition, isLoading } = useAppSelector(getEditionsInfo)
   const results = useAppSelector(getEditionsResults)
@@ -20,7 +21,7 @@ export const EditionsTabs = () => {
     if (isLoading) {
       return
     }
-    dispatch(requestUserEditionsInfo(offset, setOffset))
+    user_id && dispatch(requestUserEditionsInfo(offset, setOffset, user_id))
   }
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export const EditionsTabs = () => {
                 ) : (
                 edition?.count ? ( results.map((edition) => 
                     <div key={edition.id}>
-                      <Gallery  price={edition.number} original_pic={edition.moment.original_pic.attachment} title={edition.moment.title} likes={edition.moment.likes} />
+                      <Gallery duration={edition.moment.original_pic.duration}  price={edition.number} original_pic={edition.moment.original_pic.attachment} title={edition.moment.title} likes={edition.moment.likes} />
                     </div>)
                 ) : (
                 <EmptyState isButton description='Once you purchase your moments, they will appear here.' />

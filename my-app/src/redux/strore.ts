@@ -1,10 +1,7 @@
 import { ThunkAction, Action, configureStore } from '@reduxjs/toolkit'
-import athletesSlice from './reducers/athletesSlice'
-import brandsSlice from './reducers/brandsSlice'
 import dropsSlice from './reducers/dropsSlice'
 import editionSlice from './reducers/editionsSlice'
 import momentsSlice from './reducers/momentsSlice'
-import placesSlice from './reducers/placesSlice'
 import savedCardsSlice from './reducers/savedCardsSlice'
 import sportTypeSlice from './reducers/sportTypeSlice'
 import userSlice from './reducers/userSlice'
@@ -18,9 +15,6 @@ export const store = configureStore({
     savedCards: savedCardsSlice,
     moments: momentsSlice,
     sportTypes: sportTypeSlice,
-    athletes: athletesSlice,
-    brands: brandsSlice,
-    places: placesSlice,
   },
 })
 

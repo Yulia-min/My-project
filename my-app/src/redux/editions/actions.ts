@@ -9,10 +9,10 @@ import {
   loadingSaleSuccess,
 } from '../reducers/editionsSlice'
 
-export const requestUserEditionsInfo = (offset: number, setOffset: Function): AppThunk => async (dispatch) => {
+export const requestUserEditionsInfo = (offset: number, setOffset: Function, user_id: string): AppThunk => async (dispatch) => {
     try {
       dispatch(loading())
-      const response = await requestUserEditionsInfoAPI(offset)
+      const response = await requestUserEditionsInfoAPI(offset, user_id)
       dispatch(loadingSuccess(response.data))   
       setOffset(offset + 10)  
     } catch (err) {
@@ -22,10 +22,10 @@ export const requestUserEditionsInfo = (offset: number, setOffset: Function): Ap
     }
   }
 
-  export const requestUserSaleInfo = (offset: number, setOffset: Function): AppThunk => async (dispatch) => {
+  export const requestUserSaleInfo = (offset: number, setOffset: Function, user_id: string): AppThunk => async (dispatch) => {
     try {
       dispatch(loading())
-      const response = await requestUserSaleInfoAPI(offset)
+      const response = await requestUserSaleInfoAPI(offset, user_id)
       dispatch(loadingSaleSuccess(response.data))   
       setOffset(offset + 10)  
     } catch (err) {

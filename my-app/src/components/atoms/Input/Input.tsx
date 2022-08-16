@@ -18,7 +18,6 @@ export const Input = ({className, onChange, value, disabled, label, type, placeh
                     </>
                 )
             }
-
         </div>
     )
 }

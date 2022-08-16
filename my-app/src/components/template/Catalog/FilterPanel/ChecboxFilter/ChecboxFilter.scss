@@ -1,0 +1,19 @@
+@import '/src/style/style.scss';
+
+.filter-wrapper{
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+        width: 6px;
+        background-color: $white;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background: $white-gray;
+    }
+
+    &::-webkit-scrollbar-track{
+        border-radius: 10px;
+        background-color: $white;
+    }
+}

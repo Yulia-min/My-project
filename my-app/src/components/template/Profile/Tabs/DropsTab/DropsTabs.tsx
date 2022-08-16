@@ -9,17 +9,17 @@ export const DropsTabs = () => {
 
   const dispatch = useAppDispatch()
 
+  const user_id = localStorage.getItem('id')
+
   const { drop, isDropsLoading } = useAppSelector(getDropsInfo)
   const results = useAppSelector(getDropsResults)
   const [ offset, setOffset ] = useState(0)
-
-  console.log(drop)
 
   const loadMoreData = () => {
     if (isDropsLoading) {
       return
     }
-    dispatch(requestUserDropsInfo(offset, setOffset))
+    user_id && dispatch(requestUserDropsInfo(offset, setOffset, user_id))
   }
 
   useEffect(() => {

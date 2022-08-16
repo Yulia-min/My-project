@@ -3,5 +3,5 @@ export type GalleryType = {
     title: string
     price: number
     likes: number
-    format?: any
+    duration?: any
 }

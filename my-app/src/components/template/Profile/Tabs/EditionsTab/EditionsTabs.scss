@@ -1,8 +1,10 @@
 @import '/src/style/style.scss';
 
 .editions-display{
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
 }
 
 .crop-modal .ant-btn-primary {

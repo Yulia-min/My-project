@@ -1,7 +1,4 @@
-import { IAthlete } from "src/redux/types/athletesTypes"
-import { IBrand } from "src/redux/types/brandsTypes"
 import { IMoments } from "src/redux/types/momentsTypes"
-import { IPlace } from "src/redux/types/placesTypes"
 import { ISportType } from "src/redux/types/sportTypes"
 
 export type MomentsData = {
@@ -42,6 +39,7 @@ export type AthleteData = {
         {
             id: number
             full_name: string
+            isCheck: boolean
         }
     ]
 }
@@ -49,9 +47,9 @@ export type AthleteData = {
 export type AthleteDataResults = {
     id: number
     full_name: string
+    isCheck: boolean
 }
 
-export type AthleteInfoResponse = IAthlete
 
 export type BrandsData = {
     count: number
@@ -59,6 +57,7 @@ export type BrandsData = {
         {
             id: number
             name: string
+            isCheck: boolean
         }
     ]
 }
@@ -66,21 +65,22 @@ export type BrandsData = {
 export type BrandDataResults = {
     id: number
     name: string
+    isCheck?: boolean
 }
 
-export type BrandsInfoResponse = IBrand
 
 export type PlaceData = {
     count: number
     results: [
         {
             name: string
+            isCheck: boolean
         }
     ]
 }
 
 export type PlaceDataResults = {
     name: string
+    isCheck: boolean
 }
 
-export type PlaceInfoResponse = IPlace

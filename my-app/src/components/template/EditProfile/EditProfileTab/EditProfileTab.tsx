@@ -22,7 +22,7 @@ export const EditProfileTab = () => {
   const { user } = useAppSelector(getUserInfo)
 
   useEffect(() => {
-    dispatch(requestUserInfo())
+    user && dispatch(requestUserInfo(user.id))
   }, [])
 
   useEffect(() => {
@@ -99,15 +99,15 @@ export const EditProfileTab = () => {
   }
 
    const onFinish = (values: UserData) => { 
-    if(values){
+    if(values &&  user){
         if(!blob && removeImage){
-            dispatch(requestEditUserInfo({user: {...values, logo : null }}))
+            dispatch(requestEditUserInfo({user: {...values, logo : null }}, user.id))
         } else if(blob?.name){
             const formData = new FormData()
             formData.append('logo', blob, blob?.name)
-            dispatch(requestEditUserInfo({user: {...values, logo : formData.get('logo') }}))
+            dispatch(requestEditUserInfo({user: {...values, logo : formData.get('logo') }}, user.id))
         }
-        dispatch(requestEditUserInfo({user: values}))
+        dispatch(requestEditUserInfo({user: values}, user.id))
     }
 
     navigate('/profile')

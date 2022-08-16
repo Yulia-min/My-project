@@ -15,12 +15,13 @@
 
  .tabs .ant-tabs-tab-btn{
     @include font-style(500, 18px, 14px);
-    color: #7D8081;
+    color: $light-gray;
 }
 
 .card-display{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    column-gap: 40px;
 }
 
 #scrollableDiv {

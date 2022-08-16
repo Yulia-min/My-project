@@ -8,8 +8,9 @@ import { Image } from 'src/components/atoms/Image'
 import { Dropdown, Menu } from 'antd'
 import { GalleryType } from './GalleryType'
 import copy from 'src/public/copy.png'
+import { Video } from 'src/components/atoms/Video';
 
-export const Gallery = ({original_pic, title, price, likes, format}: GalleryType) => {
+export const Gallery = ({original_pic, title, price, likes, duration}: GalleryType) => {
     const [copySuccess, setCopySuccess] = useState('Copy link')
     const onClick = () => {
         navigator.clipboard.writeText('Copy link')
@@ -17,14 +18,6 @@ export const Gallery = ({original_pic, title, price, likes, format}: GalleryType
         setTimeout(() => {
             setCopySuccess('Copy link')
         }, 2000)
-    }
-
-    const onMouseOver = (e: any) => {
-        e.target.play()
-    }
-
-    const onMouseOut = (e: any) => {
-        e.target.pause()
     }
 
     const menu = (
@@ -44,8 +37,9 @@ export const Gallery = ({original_pic, title, price, likes, format}: GalleryType
     )
     return (
         <div className='gallery-wrapper'>
-            <Image src={original_pic} />
-            <video src={original_pic} width='300px' muted onMouseOver={onMouseOver} onMouseOut={onMouseOut} /> 
+            {
+                duration !== null ? <Video  src={original_pic} /> : <Image src={original_pic} />
+            }
             <div className='gallery-name'>{title}</div>
             <div className='gallery-info'>
                 <div className='gallery-info_price'>{price ? `$${price}` : ''}</div>

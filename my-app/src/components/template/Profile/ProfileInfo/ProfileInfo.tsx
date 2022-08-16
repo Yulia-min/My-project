@@ -16,7 +16,7 @@ export const ProfileInfo = () => {
   const { user } = useAppSelector(getUserInfo)
 
   useEffect(() => {
-    dispatch(requestUserInfo())
+    user && dispatch(requestUserInfo(user.id))
   }, [])
 
   const showEditprofile = () => {

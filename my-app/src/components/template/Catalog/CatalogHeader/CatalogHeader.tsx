@@ -6,7 +6,7 @@ import './CatalogHeader.scss'
 
 export const CatalogHeader = () => {
 
-  const [banner, setBanner] = useState<any>()
+  const [banner, setBanner] = useState<DropBanerData>()
 
   useEffect(() => {
     requestBannerInfo().then((resp) => {

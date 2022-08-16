@@ -12,6 +12,19 @@ import {
 } from '../reducers/userSlice'
 import { RequestChangeFormActionProps, RequestEditUserActionProps, RequestForgetFormActionProps, RequestSignInActionProps } from '../types/requestsTypes'
 
+
+export const requestUserInfo = (user_id: string): AppThunk => async (dispatch) => {
+  try {
+    dispatch(loading())
+    const response = await requestUserInfoAPI(user_id)
+    dispatch(loadingSuccess(response.data))
+  } catch (err) {
+    dispatch(error({ error: err }))
+  } finally {
+    dispatch(finish())
+  }
+}
+
 export const requestSignIn =
   ({ user }: RequestSignInActionProps): AppThunk =>
   async (dispatch) => {
@@ -23,7 +36,7 @@ export const requestSignIn =
         localStorage.setItem('email', data.email)
         localStorage.setItem('id', data.id)
         localStorage.setItem('refresh', data.refresh)
-        dispatch(requestUserInfo())
+        dispatch(requestUserInfo(data.id))
       }
     } catch (err) {
       dispatch(error({ error: err }))
@@ -64,24 +77,12 @@ export const requestSignIn =
     }
   }
 
-  export const requestUserInfo = (): AppThunk => async (dispatch) => {
+  export const requestEditUserInfo = ({user}: RequestEditUserActionProps, user_id: string): AppThunk => async (dispatch) => {
     try {
       dispatch(loading())
-      const response = await requestUserInfoAPI()
-      dispatch(loadingSuccess(response.data))
-    } catch (err) {
-      dispatch(error({ error: err }))
-    } finally {
-      dispatch(finish())
-    }
-  }
-
-  export const requestEditUserInfo = ({user}: RequestEditUserActionProps): AppThunk => async (dispatch) => {
-    try {
-      dispatch(loading())
-      const { data } = await requestEditUserInfoAPI(user)
+      const { data } = await requestEditUserInfoAPI(user, user_id)
       if (data) {
-        dispatch(requestUserInfo())
+        dispatch(requestUserInfo(user.id))
       }
     } catch (err) {
       dispatch(error({ error: err }))

@@ -13,7 +13,7 @@ export interface IMoments {
                 original_pic: {
                     id: string
                     attachment: string
-                    format: string
+                    duration: string
                 }
            }
         ]
@@ -29,7 +29,7 @@ export type IMomentsResult = {
         original_pic: {
             id: string
             attachment: string
-            format: string
+            duration: string
         }
 }
   

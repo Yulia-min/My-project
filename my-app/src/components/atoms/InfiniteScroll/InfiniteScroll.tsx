@@ -14,9 +14,9 @@ export const Scroll = ({loadMoreData, isLoading, children, dataLength, hasMore}:
             hasMore={hasMore}
             loader={isLoading && <Loader isInfinityLoader count={1} />}
         >
-            <div className='editions-display'>
+            {/* <div className='editions-display'> */}
               {children}
-            </div>
+            {/* </div> */}
         </InfiniteScroll>
     </div>
   )

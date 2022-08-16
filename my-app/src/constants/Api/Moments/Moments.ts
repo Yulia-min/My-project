@@ -1,6 +1,6 @@
 import { HTTP_METHODS } from 'src/helper/api'
 import Fetcher from 'src/services/fetcher'
-import { MomentsData, MomentsInfoResponse, SportTypesData, SportTypesInfoResponse, AthleteData, AthleteInfoResponse, BrandsData, BrandsInfoResponse, PlaceData, PlaceInfoResponse } from './Moments.d'
+import { MomentsData, MomentsInfoResponse, SportTypesData, SportTypesInfoResponse, AthleteData , BrandsData, PlaceData } from './Moments.d'
 
 const fetcher = new Fetcher()
 
@@ -17,19 +17,19 @@ export const requestSportTypeInfo = () =>
 })
 
 export const requestAthleteInfo = () =>
-    fetcher.requestToReceive<AthleteData, AthleteInfoResponse>({
+    fetcher.requestToReceive<{}, AthleteData>({
       url: 'athletes/',
       method: HTTP_METHODS.GET,
 })
 
 export const requestBrandsInfo = () =>
-    fetcher.requestToReceive<BrandsData, BrandsInfoResponse>({
+    fetcher.requestToReceive<{}, BrandsData>({
       url: 'brands/',
       method: HTTP_METHODS.GET,
 })
 
 export const requestPlacesInfo = () =>
-    fetcher.requestToReceive<PlaceData, PlaceInfoResponse>({
+    fetcher.requestToReceive<{}, PlaceData>({
       url: 'places/',
       method: HTTP_METHODS.GET,
 })
