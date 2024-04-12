@@ -1,11 +1,14 @@
+@import '/src/style/style.scss';
+
 .empty-wrapper{
     display: flex;
     flex-direction: column;
     width: 260px;
-    margin: 45% 5% 0 95%;
+    margin: 55% 5% 0 70%;
 }
 
 .empty-descripton{
+    @include font-style(400, 22px, 14px);
     margin-top: 24px;
     margin-bottom: 16px;
     text-align: center;
@@ -13,11 +16,12 @@
 }
 
 .empty-button{
+    @include font-style(500, 18px, 14px);
     width: 192px;
     height: 40px;
     margin: 0 15% 0 15%;
-    background: #FFFFFF;
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
-    color: #161C1E;
+    background: $white;
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
+    color: $light-black;
 }

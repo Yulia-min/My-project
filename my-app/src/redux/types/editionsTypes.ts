@@ -12,6 +12,7 @@ export interface IEdition {
                 original_pic: {
                     id: string
                     attachment: string
+                    duration: string
                 }
             }
         }
@@ -28,6 +29,7 @@ export type IEditionResult = {
         original_pic: {
             id: string
             attachment: string
+            duration: string
         }
     }
 }

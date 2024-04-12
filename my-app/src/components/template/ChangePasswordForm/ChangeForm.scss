@@ -1,3 +1,5 @@
+@import '/src/style/style.scss';
+
 .password-input-wrapper{
     display:flex;
     margin-bottom: 6px;
@@ -6,7 +8,7 @@
 .input {
     width: 423px;
     height: 48px;
-    border-radius: 6px;
+    border-radius: $border-radius;
   }
 
 .show-button{
@@ -14,11 +16,11 @@
     position: absolute;
     margin-top: 13px;
     border: none;
-    background:white;
-    color:black;
+    background:$white;
+    color:$black;
 }
 
 .ant-btn:focus{
-    color:black;
+    color:$black;
 }
 

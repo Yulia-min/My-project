@@ -1,32 +1,27 @@
+@import '/src/style/style.scss';
+
 .tabs{
     width: 1015px;
 }
 
 .tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;   
-    color: #161C1E;
+    @include font-style(500, 18px, 14px); 
+    color: $light-black;
 }
 
 .tabs .ant-tabs-ink-bar {
-    background: #161C1E;
+    background: $light-black;
  }
 
  .tabs .ant-tabs-tab-btn{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #7D8081;
+    @include font-style(500, 18px, 14px);
+    color: $light-gray;
 }
 
 .card-display{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    column-gap: 40px;
 }
 
 #scrollableDiv {

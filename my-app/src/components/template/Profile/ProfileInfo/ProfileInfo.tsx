@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Typography } from 'antd'
+import { Button } from 'antd'
 import cn from 'classnames'
 import './Profile.scss'
 
@@ -16,7 +16,7 @@ export const ProfileInfo = () => {
   const { user } = useAppSelector(getUserInfo)
 
   useEffect(() => {
-    dispatch(requestUserInfo())
+    user && dispatch(requestUserInfo(user.id))
   }, [])
 
   const showEditprofile = () => {
@@ -28,11 +28,11 @@ export const ProfileInfo = () => {
         <div>
             <img alt='profile' src={user?.logo ? user?.logo : noFoto} className={cn('default-image', 'profile-image')} />
         </div>
-        <Typography.Title level={3} className='profile-name'>{user?.username}</Typography.Title>
-        <Typography.Title level={5} className='profile-email'>{user?.email}</Typography.Title>
+        <div className='profile-name'>{user?.username}</div>
+        <div className='profile-email'>{user?.email}</div>
         <Button className='wallet-button'>View wallet</Button>
         <Button className='edit-button' onClick={showEditprofile}>Edit profile</Button>
-        <Typography.Title level={5}  className='profile-description'>{user?.about}</Typography.Title>
+        <div  className='profile-description'>{user?.about}</div>
     </div>
   )
 }

@@ -1,0 +1,105 @@
+@import '/src/style/style.scss';
+
+.catalog-filter{
+    position: sticky;
+    top: 0px;
+    display: flex;
+    background: $white;
+    z-index: 2;
+    height: 50px;
+    justify-content: space-between;
+    margin-top: 48px;
+    margin-left: 40px;
+    margin-bottom: 24px;
+    &_info{
+        display: flex;
+    }
+
+    &_sort{
+        display: flex
+    }
+}
+
+.filter-name{
+    @include font-style(500, 40px, 34px);
+    color: $light-black;
+    margin-right: 20px;
+}
+
+.filter-items{
+    @include font-style(400, 18px, 14px);
+    color: $light-gray;
+    margin-top: 15px;
+}
+
+.hide-filter{
+    margin-right: 35px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.show-hide{
+    display: flex;
+    @include font-style(500, 18px, 14px);
+    color: $light-black;
+
+    svg{
+        margin-left: 10px;
+    }
+}
+
+.sort-filter{
+    display: flex;
+    &_by{
+        @include font-style(500, 18px, 14px);
+        color: $light-gray;
+        margin-top: 15px;
+    }
+}
+
+.filter-select{
+    margin-top: 9px;
+    width: 100px;
+}
+
+
+.filter-select .ant-select-selection-item{
+    @include font-style(500, 18px, 14px);
+    color: $light-black;
+}
+
+.filter-select.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    border: none;
+}
+
+.filter-select.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    border-color: $white;
+    box-shadow: none;
+}
+
+.catalog-content{
+    display: flex;
+}
+
+.empty-container{
+    position: absolute;
+    margin: 0 0 0 25%;
+    &_title{
+        @include font-style(500, 30px, 24px);
+        color: $light-black;
+    }
+    &_description{
+        @include font-style(400, 30px, 20px);
+        color: $light-black;
+    }
+}
+
+.main-tag-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 27px;
+    margin-bottom: 20px;
+}
+
+
+

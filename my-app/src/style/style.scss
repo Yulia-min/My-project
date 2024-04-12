@@ -1,0 +1,24 @@
+@mixin font-style($font-weight, $line-height, $font-size) {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    font-size: $font-size;
+}
+
+$black: black;
+$light-black: #161C1E;
+$dark-turquoise:#4085A0;;
+$sky-blue: #458FAC;
+$azure:#509BB9;
+$aquamarine: #B5D2DE;
+$gray-granite: #45494B;
+$light-gray: #7D8081;
+$gray-silver: #B4B6B7;
+$white-gray: #D0D2D2;
+$gray-graphite:#F2F2F3;
+$white: #FFFFFF;
+$red: red;
+
+
+$border-radius: 6px;

@@ -1,31 +1,27 @@
+@import '/src/style/style.scss';
+
 .editions-display{
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
 }
 
 .crop-modal .ant-btn-primary {
-    background: #458FAC;
-    border-radius: 6px;
+    @include font-style(500, 18px, 14px);
+    background: $dark-turquoise;
+    border-radius: $dark-turquoise;
     width: 63px;
     height: 40px;
-    color: #FFFFFF;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    color: $white;
 }
 
 .crop-modal .ant-btn-default{
+    @include font-style(500, 18px, 14px);
     width: 75px;
     height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
-    color: #161C1E;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    background: $white;
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
+    color: $light-black;
 }

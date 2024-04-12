@@ -1,30 +1,32 @@
+@import '/src/style/style.scss';
+
 .forgot-password{
     margin-left: 300px;
     text-decoration: underline;
 }
 
 .link{
-    color: #161C1E;
+    color: $light-black;
 }
 
 .text-back{
     margin: 0 20% 0 35%; 
-    color: #161C1E;
+    color: $light-black;
     text-decoration: underline;
     font-size: 14px;
 }
 
 .error{
-    color: red;
+    color: $red;
     margin-top: -15px;
 }
 
 .button.ant-btn:focus{
-    color: white;
+    color: $white;
 }
 
 .password-input-wrapper{
-    display:flex;
+    display: flex;
 }
 
 .show-button{
@@ -32,10 +34,10 @@
     position: absolute;
     margin-top: 0px;
     border: none;
-    background:white;
-    color:black;
+    background: $white;
+    color: $black;
 }
 
 .ant-btn:focus{
-    color:black;
+    color: $black;
 }

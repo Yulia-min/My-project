@@ -1,16 +1,15 @@
+@import '/src/style/style.scss';
+
 .gallery-wrapper{
-    width: 323px;
-    margin-right: 15px;
-    margin-bottom: 41px;
+    // width: 300px;
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-bottom: 40px
 }
 
 .gallery-name{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: #161C1E;
+    @include font-style(500, 20px, 16px);
+    color: $light-black;
     margin-top: 12px;
     margin-bottom: 8px;
 }
@@ -19,12 +18,8 @@
     display: flex;
     justify-content: space-between;
     &_price{
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        color: #161C1E;
+        @include font-style(400, 20px, 16px);
+        color: $light-black;
     }
     &_icon{
         display: flex;
@@ -42,25 +37,17 @@
 }
 
 .likes-count{
+    @include font-style(500, 18px, 17px);
     margin-left: 3px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 18px;
     text-align: right;
-    color: #7D8081;
+    color: $light-gray;
 }
 
 .copy{
     display: flex;
     &_text{
-        color: #161C1E;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 18px;
+        @include font-style(500, 18px, 14px);
+        color: $light-black;
         margin-left: 10px;
     }
 }

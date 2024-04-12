@@ -1,9 +1,11 @@
+@import '/src/style/style.scss';
+
 .slick-dots{
     bottom: 25px !important;
 }
 
 .images-wrapper {
-    height: 740px;
+    height: 823px;
     width: 400px;
     position: relative;
   }
@@ -15,23 +17,19 @@
   }
 
 .title-text{
+    @include font-style(600, 56px, 46px);
     z-index: 3;
     position: absolute;
-    color: white;
-    font-size: 46px;
-    line-height: 56px;
-    font-weight: bold;
+    color: $white;
     left: 30px;
     top: 250px;
 }
 
 .description-text{
+    @include font-style(600, 38px, 26px);
     z-index: 3;
     position: absolute;
-    color: white;
-    font-size: 26px;
-    line-height: 38px;
-    font-weight: bold;
+    color: $white;
     left: 30px;
     top: 450px;
 }

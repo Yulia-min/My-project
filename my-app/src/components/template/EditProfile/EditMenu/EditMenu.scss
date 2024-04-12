@@ -1,14 +1,13 @@
+@import '/src/style/style.scss';
+
 .tabs-wrapper{
     margin-left: 40px;
+    margin-top: 48px;
 }
 
 .tab-pane_item{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: #161C1E;
+    @include font-style(500, 20px, 16px);
+    color: $light-black;
     padding: 10px 16px;
 
     svg{
@@ -27,20 +26,20 @@
 }
 
 .edit-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
-    background: #F2F2F3;
+    background: $gray-graphite;
     padding: 10px 16px;
     border-radius: 6px;
     width: 210px;
 
     .tab-pane_item{
-        color: #458FAC;
+        color: $dark-turquoise;
     }
 
     svg{
         margin-right: 10px;
         margin-bottom: -3px;
         path{
-            fill: #458FAC;
+            fill: $dark-turquoise;
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { ChangePasswordPage, EditProfilePage, ForgetPasswordPage, MainPage, ProfilePage, SignIn } from 'src/components/page'
+import { CatalogPage, ChangePasswordPage, EditProfilePage, ForgetPasswordPage, MainPage, ProfilePage, SignIn } from 'src/components/page'
 import { routes } from './config/config.routes'
 import { HeaderContent } from './HeaderContent'
 import ProtectedRoutes from './ProtectedRoutes'
@@ -20,6 +20,7 @@ const AppRoutes = () => {
           <Route path={routes.profile} element={<ProfilePage /> } />
           <Route path={routes.main} element={<MainPage />} />
           <Route path={routes.edit_user} element={<EditProfilePage />} />
+          <Route path={routes.market_place} element={<CatalogPage />} />
         </Route>
       </Route>
     </Routes>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Loader } from '../Loader'
 import { ScrollType } from './ScrollType'
@@ -14,9 +14,9 @@ export const Scroll = ({loadMoreData, isLoading, children, dataLength, hasMore}:
             hasMore={hasMore}
             loader={isLoading && <Loader isInfinityLoader count={1} />}
         >
-            <div className='editions-display'>
+            {/* <div className='editions-display'> */}
               {children}
-            </div>
+            {/* </div> */}
         </InfiniteScroll>
     </div>
   )

@@ -1,3 +1,5 @@
+@import '/src/style/style.scss';
+
 .profile{
     width: 297px;
     display: flex;
@@ -6,85 +8,53 @@
 }
 
 .profile-name{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
+    @include font-style(500, 28px, 20px);
     text-align: center;
+    margin-bottom: 8px;
+    color: $light-black;
 }
 
 .profile-email{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
+    @include font-style(400, 18px, 14px);
     text-align: center;
-}
-
-.ant-typography + h5.ant-typography {
-    margin-top: 0;
-}
-
-.profile-email.ant-typography{
-    color: #7D8081;
-}
-
-h3.ant-typography{
-    color: #161C1E;
+    color: $light-gray;
 }
 
 .wallet-button{
-    background: #458FAC;
-    border-radius: 6px;
+    background: $sky-blue;
+    border-radius: $border-radius;
     height: 40px;
     margin-bottom: 16px;
     margin-top: 24px;
 }
 
 .wallet-button span{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #FFFFFF;
+    @include font-style(500, 18px, 14px);
+    color: $white;
 }
 
 .edit-button{
     height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
+    background: $white;
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
     margin-bottom: 24px;
 }
 
 .edit-button span{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #161C1E;
+    @include font-style(500, 18px, 14px);
+    color: $light-black;
 }
 
 .profile-description{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px; 
-}
-
-.profile-description.ant-typography{
-    color: #161C1E;
+    @include font-style(400, 22px, 14px);
+    color: $light-black;
 }
 
 .email-logo{
     width: 90px;
     height: 90px;
-    border:  1px solid black;
+    border:  1px solid $black;
     border-radius: 100%;
     text-align: center;
     margin-left: 35%;

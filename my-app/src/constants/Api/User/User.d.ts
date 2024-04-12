@@ -39,6 +39,11 @@ export type SavedCardsData = {
     result: []
 }
 
+export type DropBanerData = {
+    id: string
+    marketplace_banner: string
+}
+
 
 export type UserInfoResponse = IUser
 

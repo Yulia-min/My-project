@@ -1,12 +1,10 @@
+@import '/src/style/style.scss';
+
 .edit-profile{
     margin-left: 135px;
     &_title{
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 34px;
-        line-height: 40px;
-        color: #161C1E;
+        @include font-style(500, 40px, 34px);
+        color: $light-black;
         margin-bottom: 24px;
     }
 
@@ -33,30 +31,22 @@
 }
 
 .upload-file{
-    background: #FFFFFF;
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
+    @include font-style(500, 18px, 14px);
+    background: $white;
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
     width: 108px;
     height: 36px;
     margin-left: 20px;
-    color: #161C1E;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    color: $light-black;
     text-align: center;
     padding: 9px 12px;
     cursor: pointer;
 }
 
 .remove-image{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #7D8081;
+    @include font-style(500, 18px, 14px);
+    color: $light-gray;
     margin-left: 16px;
 }
 
@@ -66,23 +56,15 @@
 }
 
 .edit-profile_username{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
-    color: #161C1E;
+    @include font-style(500, 28px, 20px);
+    color: $light-black;
     margin-left: 20px;
     margin-bottom: 12px;
 }
 
 .modal-info{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 34px; 
-    color: #161C1E;
+    @include font-style(500, 34px, 28px);
+    color: $light-black;
     margin-bottom: 24px;
 }
 
@@ -91,15 +73,15 @@
 }
 
 .name-input{
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
-    background: #FFFFFF;
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
+    background: $white;
     width: 323px;
     padding: 10px;
     height: 48px;
     margin-right: 24px;
     box-sizing: border-box;
-    color: #161C1E;
+    color: $light-black;
 }
 
 .email-input{
@@ -107,25 +89,21 @@
     width: 670px;
     padding: 10px;
     height: 48px;
-    background: #F2F2F3;
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
-    color: #B4B6B7;
+    background: $gray-graphite;
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
+    color: $gray-silver;
 }
 
 .about-input{
+    @include font-style(400, 20px, 16px);
     box-sizing: border-box;
-    color: #161C1E;
+    color: $light-black;
     padding: 10px;
     width: 670px;
-    background: #FFFFFF;
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    background: $white;
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
 
     &:focus{
         outline: none;
@@ -137,34 +115,26 @@
 }
 
 .cancel{
-    border: 1px solid #D0D2D2;
-    border-radius: 6px;
-    background: #FFFFFF;
+    @include font-style(500, 20px, 16px);
+    border: 1px solid $white-gray;
+    border-radius: $border-radius;
+    background: $white;
     width: 97px;
     height: 48px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
 }
 
 .save{
-    background: #458FAC;
-    border-radius: 6px;
+    background: $sky-blue;
+    border-radius: $border-radius;
     width: 83px;
     height: 48px;
     margin-left: 12px;
 }
 
 .save.ant-btn-primary[disabled]{
-    background: #B5D2DE;
-    border-radius: 6px;
-    color: #FFFFFF;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
+    @include font-style(500, 20px, 16px);
+    background: $aquamarine;
+    border-radius: $border-radius;
+    color: $white;
 }
 

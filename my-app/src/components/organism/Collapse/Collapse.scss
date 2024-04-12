@@ -1,0 +1,51 @@
+@import '/src/style/style.scss';
+
+.collapse-content {
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+  }
+
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    &_text{
+        @include font-style(500, 20px, 16px);
+        color: $light-black;
+    }
+    &_wrapper{
+      display: flex;
+    }
+  }
+
+  .rotate-arrow {
+    transition: all 0.2s linear;
+  }
+
+  .rotate-arrow.down {
+    transform: rotate(180deg);
+  }
+
+  .rotate-arrow.up {
+    transform: rotate(360deg);
+  }
+  
+  .collapse-icon-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .collapse-transition {
+    transition: 0.3s;
+  }
+
+  .select-mark{
+    width: 6px;
+    height: 6px;
+    background-color: $sky-blue;
+    border-radius: 100%;
+    margin-top: 8px;
+    margin-left: 8px
+  }
+  

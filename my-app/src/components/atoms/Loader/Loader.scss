@@ -1,5 +1,6 @@
+@import '/src/style/style.scss';
+
 .common-block {
-    width: 323px;
     margin-right: 15px;
     margin-bottom: 16px;
     position: relative;
@@ -8,7 +9,7 @@
 
   .common-block::after{
     content: "";
-    background: linear-gradient(270deg, #F2F2F3 0%, #FFFFFF 48.3%, #F2F2F3 100%);
+    background: linear-gradient(270deg, $gray-graphite 0%, $white 48.3%, $gray-graphite 100%);
     position: absolute;
     width: 80px;
     height: 462px;
@@ -22,27 +23,27 @@
         left: 0;
     }
     100% {
-        left: 0;
+        left: 100%;
     }
   }
 
   .first-block{
-    width: 323px;
+    width: 100%;
     height: 362px;
     margin-bottom: 14px;
-    background: #F2F2F3;
+    background: $gray-graphite;
   }
   .second-block{
     height: 16px;
-    width: 323px;
-    background: #F2F2F3;
+    width: 100%;
+    background: $gray-graphite;
     margin-bottom: 12px;
   }
 
   .third-block{
     height: 16px;
     width: 132px;
-    background: #F2F2F3;
+    background: $gray-graphite;
   }
 
   @keyframes blink {
@@ -58,7 +59,7 @@
     animation: 1s blink infinite; 
     width: 10px;
     height: 10px;
-    background-color: #458FAC;
+    background-color: $sky-blue;
     margin-left: 7px;
     border-radius: 100%;
   }
@@ -67,14 +68,14 @@
     animation-delay: 250ms; 
     width: 10px;
     height: 10px;
-    background-color: #62A6C0;
-    color: #62A6C0; 
+    background-color: $azure;
+    color: $azure; 
   }
 
   .dots:nth-child(3) { 
     animation-delay: 500ms; 
     width: 10px;
     height: 10px;
-    background-color: #B5D2DE;
-    color: #B5D2DE; 
+    background-color: $aquamarine;
+    color: $aquamarine; 
   }

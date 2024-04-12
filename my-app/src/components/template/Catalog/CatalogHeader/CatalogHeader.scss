@@ -1,0 +1,33 @@
+@import '/src/style/style.scss';
+
+.catalog-header{
+    &_container{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-top: 20px;
+    }
+    &_wrapper{
+        @include font-style(400, 30px, 20px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: $white;
+        transform: translate(-50%, -50%);
+    }
+    &_background{
+        filter: brightness(60%);
+        width: 95%;
+        height: 360px;
+    }
+    &_data{
+        text-align: center;
+    }
+    &_logo{
+        margin: 10px 15% 27px 20% ;
+    }
+
+    &_description{
+        text-align: center;
+    }
+}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
 import { EmptyState, Gallery } from 'src/components/organism'
-import './SavedTab.scss'
 import { getSavedCardsResults, getSaveСardsInfo } from 'src/redux/savedCards/selectors'
 import { requestUserSavedInfo } from 'src/redux/savedCards/actions'
 import { Loader, Scroll } from 'src/components/atoms'
@@ -11,6 +10,8 @@ export const SavedTab = () => {
   const dispatch = useAppDispatch()
 
   const [offset, setOffset] = useState(0)
+
+  const user_id = localStorage.getItem('id')
   
   const { savedCards, isLoading } = useAppSelector(getSaveСardsInfo)
   const results = useAppSelector(getSavedCardsResults)
@@ -19,7 +20,7 @@ export const SavedTab = () => {
     if (isLoading) {
       return
     }
-    dispatch(requestUserSavedInfo(offset, setOffset))
+    user_id && dispatch(requestUserSavedInfo(offset, setOffset, user_id))
   }
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export const SavedTab = () => {
               ) : (
               savedCards?.count ? ( results.map((savedCard) => 
                   <div key={savedCard.id}>
-                    <Gallery price={savedCard.max_price} original_pic={savedCard.original_pic.attachment} title={savedCard.title} likes={savedCard.likes} />
+                    <Gallery duration={savedCard.original_pic.duration} price={savedCard.max_price} original_pic={savedCard.original_pic.attachment} title={savedCard.title} likes={savedCard.likes} />
                   </div>)
               ) : (
               <EmptyState description='Once you save your moments, they will appear here.' />

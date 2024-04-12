@@ -1,0 +1,41 @@
+@import '/src/style/style.scss';
+
+.card-wrapper{
+    width: 323px;
+    margin-right: 15px;
+    margin-bottom: 41px;
+}
+
+.card-info{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-info_name{
+    @include font-style(500, 20px, 16px);
+    color: $light-black;
+}
+
+.card-info_price{
+    @include font-style(400, 20px, 16px);
+    color: $light-black;
+}
+
+.card-open{
+    width: 325px;
+    height: 40px;
+    background: $dark-turquoise;
+    border-radius: $border-radius;
+}
+
+.card-open span{
+    @include font-style(500, 18px, 14px);
+    color: $white;
+}
+
+.profile-image{
+    margin: 5% 15% 5% 35%;
+    width: 100px;
+}

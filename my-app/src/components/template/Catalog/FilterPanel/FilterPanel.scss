@@ -1,0 +1,151 @@
+@import '/src/style/style.scss';
+
+.filter-panel-wrapper{
+    width: 300px;
+    margin-right: 48px;
+    margin-left: 40px;
+    height: 890px;
+}
+
+.filter-main-wrapper{
+    display: flex;    
+    justify-content: space-between;
+}
+
+.filter-clear{
+    margin-top: 10px;
+    @include font-style(500, 18px, 14px);
+    color: $light-gray;
+}
+
+.sport-type{
+    &_wrapper{
+        @include font-style(500, 20px, 16px);
+        height: 190px;
+        color: $light-black;
+        overflow-y: auto;
+        overflow-x:hidden;
+
+        &::-webkit-scrollbar{
+            width: 10px;
+            background-color: $white;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background: $white-gray;
+        }
+
+        &::-webkit-scrollbar-track{
+            border-radius: 10px;
+            background-color: $white;
+        }
+    }
+
+    &_item{
+        width: 193px;
+        margin-bottom: 12px;
+
+        &:focus{
+            color: $dark-turquoise;
+        }
+    }
+}
+
+.filter-line{
+    height: 1px;
+    background: $white-gray;
+    margin: 20px 0 20px 0;
+}
+
+.filter-main{
+    @include font-style(500, 28px, 20px);
+    color: $light-black;
+    margin-top: 10px;
+}
+
+.filter-checkbox span{
+    @include font-style(400, 18px, 14px);
+    color: $light-black;
+}
+
+.filter-checkbox .ant-checkbox-checked .ant-checkbox-inner{
+    background: $black;
+    border-color: $black;
+}
+
+.ant-checkbox-input:focus+.ant-checkbox-inner, .ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner{
+    border-color: $black;
+}
+
+.filter-checkbox.ant-checkbox-wrapper {
+    margin-top: 16px;
+}
+
+.search-input{
+    border: 1px solid $white-gray;
+    @include font-style(400, 18px, 14px);
+    border-radius: $border-radius;
+    width: 297px;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0px 0px 0  11px;
+    outline: none;
+}
+
+.filter-wrapper.brand{
+    height: 230px;
+}
+
+.filter-wrapper.athlete{
+    height: 76px;
+}
+
+.filter-wrapper.place{
+    height: 190px;
+}
+
+.tag-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-input{
+    &_wrapper{
+        display: flex;
+    }
+
+    &_check{
+        color: $red;
+    }
+
+    &_button{
+        margin-top: 16px;
+        width: 50px;
+        height: 40px;
+        @include font-style(500, 18px, 14px);
+        border-radius: 6px;
+        border: 1px solid $white-gray;
+        color: $light-black;
+    }
+
+    &_button:disabled{
+        background: #F2F2F3;
+        border: 1px solid $white-gray;
+        color: $gray-silver;
+    }
+}
+
+.filter-input.price{
+    background: url("../../../../public/dollar.png") no-repeat left;
+    background-size: 18px;
+    padding: 15px;
+}
+
+.filter-input{
+    width: 111px;
+    height: 40px;
+    margin-right: 12px;
+    margin-top: 10px;
+    border-radius: 6px; 
+}

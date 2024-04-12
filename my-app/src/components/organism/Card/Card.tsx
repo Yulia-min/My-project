@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Button } from 'antd'
-import './Card.css'
-import { Image } from 'src/components/atoms/Image'
+import './Card.scss'
+import { Image } from 'src/components/atoms'
 import { CardType } from './CardType'
 
 export const Card = ({ items }: CardType) => {

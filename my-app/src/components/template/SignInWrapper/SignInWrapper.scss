@@ -1,3 +1,5 @@
+@import '/src/style/style.scss';
+
 .sign-in-wrapper{
     display: flex;
     width: 100%;
@@ -22,8 +24,8 @@
 
 .button.ant-btn{
     width: 432px;
-    background: #458FAC;
-    border-radius: 6px;
+    background: $sky-blue;
+    border-radius: $border-radius;
     height: 48px;
 }
 
@@ -34,12 +36,12 @@
 
 .link{
     margin-left: 2px;
-    color: #161C1E;
+    color: $light-black;
     text-decoration: underline;
 }
 
 .text-item{
-    color: #7D8081;
+    color: $light-gray;
     margin-left: 2px;
 }
 

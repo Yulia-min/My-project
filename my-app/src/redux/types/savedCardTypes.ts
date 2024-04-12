@@ -9,6 +9,7 @@ export interface ISavedCards {
             original_pic: {
                 id: string
                 attachment: string
+                duration: string
             }
         }
     ]
@@ -22,6 +23,7 @@ export type ISavedCardsResult =  {
     original_pic: {
         id: string
         attachment: string
+        duration: string
     }
 }
   

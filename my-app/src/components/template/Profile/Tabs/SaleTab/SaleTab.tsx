@@ -11,6 +11,8 @@ export const SaleTab = () => {
   const dispatch = useAppDispatch()
 
   const [offset, setOffset] = useState(0)
+
+  const user_id = localStorage.getItem('id')
   
   const { saleEdition, isLoading } = useAppSelector(getSaleInfo)
   const saleResults = useAppSelector(getSalesResults)
@@ -19,7 +21,7 @@ export const SaleTab = () => {
     if (isLoading) {
       return
     }
-    dispatch(requestUserSaleInfo(offset, setOffset))
+    user_id && dispatch(requestUserSaleInfo(offset, setOffset, user_id))
   }
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export const SaleTab = () => {
                     ) : (
                       saleEdition?.count ? ( saleResults.map((edition) => 
                         <div key={edition.moment.id}>
-                          <Gallery  price={edition.number} original_pic={edition.moment.original_pic.attachment} title={edition.moment.title} likes={edition.moment.likes} />
+                          <Gallery duration={edition.moment.original_pic.duration} price={edition.number} original_pic={edition.moment.original_pic.attachment} title={edition.moment.title} likes={edition.moment.likes} />
                         </div>)
                     ) : (
                       <EmptyState  description='Once you list your moments for sale, they will appear here.' />
